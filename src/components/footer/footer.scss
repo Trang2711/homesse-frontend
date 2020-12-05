@@ -1,0 +1,36 @@
+.footer {
+    background-color: rgba(21, 21, 21, 0.96);
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.footer__header {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.footer__container {
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-contact__inner{
+    display: inline-flex;
+    align-items: center;
+}
+.footer-contact__icon {
+    width: 58px;
+    height: 58px;
+    border: 2px solid white;
+    padding: 10px;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 1.9rem;
+}
+.footer-contact__description{
+    font-size: 1rem;
+}

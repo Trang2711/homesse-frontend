@@ -3,7 +3,8 @@ import Menu from './components/navigation/Menu';
 import BasicSearch from './components/basic_search/search';
 import Features from './components/features/features';
 import Post from './components/post/post';
-import AboutUs from './components/about_us/about_us'
+import AboutUs from './components/about_us/about_us';
+import Footer from './components/footer/footer';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           area="25 m2" />
       </div>
       <AboutUs/>
+      <Footer/>
     </div>
   );
 }
