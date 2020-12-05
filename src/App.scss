@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width:768px) {
+  :root {
+    font-size: calc(18px + 2 * ((100vw - 768px) / 598));
+  }
+}
+
+@media screen and (min-width:1366px) {
+  :root {
+    font-size: 20px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+$blueColor: #238FAF;
+
+.web-header {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+}
+
+hr {
+  width: 15rem;
+  height: 0.25rem;
+  background: $blueColor;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.blue {
+  color: $blueColor;
+}
+
+.posts__container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}

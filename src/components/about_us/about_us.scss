@@ -1,0 +1,39 @@
+.about-us__container {
+    width: 80%;
+    margin: 150px auto;
+    display: flex;
+    background-color: #EAEBEB;
+}
+.about-us__content {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    width: 45%;
+    padding: 60px 0 0 35px;
+}
+.about-us__header {
+    font-size: 2rem;
+    font-weight: 700;
+    .blue {
+        color: #238FAF;
+    }
+}
+.about-us__description {
+    font-size: 1rem;
+    color: #393838;
+    line-height: 1.5rem;
+    margin: 30px 0 0 0;
+    line-height: 1.7rem;
+    p {
+        margin-bottom: 7px;
+    }
+}
+.about-us__image {
+    background-image: url('../../images/banner_2.jpg');
+    background-size: cover;
+    background-position: center center;
+    width: 55%;
+    height: 20rem;
+}
+.trapezoid {
+    clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }

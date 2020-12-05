@@ -1,0 +1,48 @@
+.post {
+    width: 24.2rem;
+    margin-bottom: 50px;
+
+    .post__image {
+        background-image: url('../../images/banner_2.jpg');
+        height: 10.1rem;
+        background-position: center center;
+        background-size: cover;
+        margin-bottom: 12px;
+        border-radius: 5px;
+    }
+
+    .post__image:hover {
+        box-shadow: 0 5px 9px rgba(7, 25, 56, 0.25);
+        transition: opacity .5s ease-in-out;
+    }
+}
+
+.post__content {
+    padding: 0 10px;
+
+    .post__title {
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 9px;
+    }
+
+    .post__intro {
+        color: black;
+        margin-bottom: 9px;
+    }
+}
+
+.post__description--item {
+    display: inline-block;
+    margin-right: 50px;
+
+    img.post__description--icon {
+        width: 22px;
+        vertical-align: middle;
+    }
+
+    span {
+        margin-left: 6px;
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "folders": [],
+    "settings": {
+        "emmet.includeLanguages": {
+            "javascript": "javascriptreact",
+            "plaintext": "pug"
+        }
+        
+    },
+    "emmet.excludeLanguages": [
+
+
+
+        "markdown"
+    ],
+    "auto-rename-tag.activationOnLanguage": [
+
+        "*"
+    ],
+    "bracketPairColorizer.activeScopeCSS": [
+
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}; opacity: 0.5"
+    ],
+    "emmet.extensionsPath": ""
+}
