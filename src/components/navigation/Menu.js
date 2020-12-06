@@ -1,8 +1,7 @@
 import './menu.scss';
 import logo from '../../images/logo_0.png';
 import { Component } from 'react';
-// import { BrowerRouter as Router, Route, Link } from 'react-router-dom';
-// import { Router, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
     // constructor() {
@@ -11,22 +10,20 @@ class Menu extends Component {
 
     render() {
         return (
-            // <Router>
                 <div className="navbar">
                     <div className="navbar__top"></div>
                     <div className="navbar__container">
                         <img className="navbar-logo" src={logo} alt=""></img>
                         <ul className="navbar-nav">
-                            <li>Trang chủ</li>
-                            <li>Chúng tôi</li>
-                            <li>Liên lạc</li>
-                            <li>Tìm kiếm</li>
-                            <li>Đăng kí</li>
-                            <li>Đăng nhập</li>
+                            <li><Link to="/">Trang chủ</Link></li>
+                            <li><a href="#aboutUs">Chúng tôi</a></li>
+                            <li><a href="#contactUs">Liên lạc</a></li>
+                            <li><Link to="/search">Tìm kiếm</Link></li>
+                            <li><Link to="/register">Đăng kí</Link></li>
+                            <li><Link to="/login">Đăng nhập</Link></li>
                         </ul>
                     </div>
                 </div>
-            // </Router>
         )
     }
 }

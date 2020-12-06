@@ -21,31 +21,3 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
 
-$blueColor: #238FAF;
-
-.web-header {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  font-size: 2rem;
-}
-
-hr {
-  width: 15rem;
-  height: 0.25rem;
-  background: $blueColor;
-  margin: auto;
-  margin-bottom: 100px;
-}
-
-.blue {
-  color: $blueColor;
-}
-
-.posts__container {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}

@@ -2,7 +2,7 @@ import './footer.scss'
 
 function Footer() {
     return (
-        <div className="footer">
+        <div id="contactUs" className="footer">
             <span className="footer__header">LIÊN HỆ VỚI CHÚNG TÔI</span>
             <div className="footer__container">
                 <div className="footer-contact__inner place">

@@ -3,7 +3,7 @@ import './about_us.scss';
 
 function AboutUs() {
     return (
-        <div className="about-us__container">
+        <div id="aboutUs" className="about-us__container">
             <div className="about-us__content">
                 <div className="about-us__header">CÔNG TY <span className="blue">HOMESSE</span></div>
                 <div className="about-us__description">

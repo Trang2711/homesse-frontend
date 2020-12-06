@@ -26,11 +26,28 @@
     width: 700px;
     display: flex;
     justify-content: space-between;
-}
-.navbar-nav li {
-    display: inline-block;
-    font-weight: 400;
-    font-size: 1.05rem;
-    font-family: 'Open Sans', sans-serif;
-    color:  #238FAF;
+
+    li {
+        line-height: 71px;
+        border-bottom: solid 4px white;
+    }
+
+    li a, li{
+        display: inline-block;
+        font-weight: 400;
+        font-size: 1.05rem;
+        font-family: 'Open Sans', sans-serif;
+        color:  #238FAF;
+        text-decoration: none;
+    }
+    
+    li:hover {
+        cursor: pointer;
+        color: black;
+        border-bottom: solid 4px #238FAF;
+        
+        a {
+            color: black;
+        }
+    }
 }
