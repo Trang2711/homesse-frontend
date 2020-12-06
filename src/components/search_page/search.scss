@@ -1,0 +1,31 @@
+.buffer{
+    height: 128.5px;
+    margin-bottom: 70px;
+}
+.search-page__container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    min-width: 816px;
+}
+.result-search__container{
+    flex-grow: 1;
+    max-width: 1200px;
+    width: 490px;
+    min-width: 490px;
+    margin-right: 70px;
+}
+.result-search_inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.result__title {
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.result__title+hr {
+    height: 1.4px;
+    background-color: black;
+    margin-bottom: 40px;
+}

@@ -1,53 +1,100 @@
-.navbar{
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.navbar {
     position: fixed;
     z-index: 100;
     width: 100%;
     background-color: white;
 }
+
 .navbar__top {
     height: 50px;
     background: rgba(21, 21, 21, 0.96);
 }
+
 .navbar-logo {
     width: 164px;
     height: 67px;
     margin-right: 45px;
 }
+
 .navbar__container {
     height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
+    border-bottom: .125rem solid;
+    border-color: #ececec;
 }
+
 .navbar-nav {
-    list-style: none;
-    display: inline-block;
     width: 700px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
 
-    li {
+    >li {
         line-height: 71px;
-        border-bottom: solid 4px white;
+        border-bottom: solid 3px white;
+
+        span {
+            margin-left: 8px;
+        }
     }
 
-    li a, li{
-        display: inline-block;
+    li a,
+    li {
         font-weight: 400;
         font-size: 1.05rem;
         font-family: 'Open Sans', sans-serif;
-        color:  #238FAF;
+        color: #434343;
         text-decoration: none;
     }
-    
-    li:hover {
+
+    >li:hover {
         cursor: pointer;
-        color: black;
-        border-bottom: solid 4px #238FAF;
-        
-        a {
-            color: black;
+        color: #238FAF;
+        border-bottom: solid 3px #238FAF;
+
+        >a {
+            color: #238FAF;
         }
     }
+}
+
+.drop-down {
+    background-color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    box-shadow: 0 8px 16px -4px rgba(9, 30, 66, .25), 0 0 0 1px rgba(9, 30, 66, .08);
+    width: 180px;
+}
+
+.drop-down {
+    position: absolute;
+    top: 80px;
+    display: none;
+
+    li {
+        padding: 0 20px;
+        a {
+            color:  #434343;
+        }
+    }
+}
+
+.drop {
+    position: relative;
+}
+
+.drop:hover .drop-down {
+    display: block;
+}
+
+.drop-down>li:hover {
+    background-color: #dddddd;
 }

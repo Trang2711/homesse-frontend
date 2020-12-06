@@ -6,7 +6,7 @@ $blueColor: #238FAF;
   font-size: 2rem;
 }
 
-hr {
+.web-header+hr {
   width: 15rem;
   height: 0.25rem;
   background: $blueColor;

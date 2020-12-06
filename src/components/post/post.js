@@ -9,8 +9,11 @@ class Post extends Component {
         var sectionStyle = {
             backgroundImage: `url(${image})`
         };
+        var style = {
+            width: `${this.props.width}`
+        };
         return (
-            <div className="post">
+            <div className="post" style={style}>
                 <div className="post__image" style={sectionStyle}></div>
                 <div className="post__content">
                     <div className="post__title">{title}</div>
