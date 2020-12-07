@@ -14,7 +14,9 @@ class Post extends Component {
         };
         return (
             <div className="post" style={style}>
-                <div className="post__image" style={sectionStyle}></div>
+                <div className="post__image" style={sectionStyle}>
+                    <i className="close-btn fas fa-times-circle"></i>
+                </div>
                 <div className="post__content">
                     <div className="post__title">{title}</div>
                     <div className="post__intro">{intro}</div>

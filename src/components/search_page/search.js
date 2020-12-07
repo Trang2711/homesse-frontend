@@ -2,6 +2,7 @@ import { Component } from 'react';
 import AdvanceSearch from '../advance_search/search';
 import Post from '../post/post';
 import MenuLogin from '../navigation/menu_login';
+import Footer from '../footer/footer';
 
 import './search.scss';
 
@@ -52,6 +53,7 @@ class SearchPage extends Component {
                     </div>
                     <AdvanceSearch />
                 </div>
+                <Footer/>
             </div>
         )
     }

@@ -7,13 +7,13 @@
 
 @media screen and (min-width:768px) {
   :root {
-    font-size: calc(18px + 2 * ((100vw - 768px) / 598));
+    font-size: calc(16px + 2 * ((100vw - 768px) / 598));
   }
 }
 
 @media screen and (min-width:1366px) {
   :root {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

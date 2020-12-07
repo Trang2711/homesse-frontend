@@ -8,6 +8,14 @@
         background-size: cover;
         margin-bottom: 12px;
         border-radius: 5px;
+        text-align: right;
+        color: rgba(0, 0, 0, 0.88);
+        .close-btn {
+            padding: 12px;
+        }
+        .close-btn:hover {
+            color: black;
+        }
     }
 
     .post__image:hover {
