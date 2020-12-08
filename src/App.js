@@ -3,6 +3,7 @@ import LoginPage from './components/login_page/login';
 import RegisterPage from './components/register_page/register';
 import SearchPage from './components/search_page/search';
 import PersonalPage from './components/personal_page/personal';
+import './App.scss';
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

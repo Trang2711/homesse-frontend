@@ -17,7 +17,7 @@ class PersonalPage extends Component {
         return (
             <Router>
                 <div className="personal-page">
-                    <MenuLogin />
+                    <MenuLogin userName="Trang Trịnh"/>
                     <div className="buffer"></div>
                     <div className="personal-page__container">
                         <LeftNav />

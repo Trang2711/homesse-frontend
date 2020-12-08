@@ -11,58 +11,75 @@ ul {
 }
 
 .navbar__top {
-    height: 50px;
-    background: rgba(21, 21, 21, 0.96);
+    height: 35px;
+    background: #191c1f;
 }
 
 .navbar-logo {
     width: 164px;
-    height: 67px;
-    margin-right: 45px;
+    height: 55px;
+    margin-right: 30px;
 }
 
 .navbar__container {
-    height: 76px;
+    height: 57px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
-    border-bottom: .125rem solid;
-    border-color: #ececec;
+    border-bottom: 2px solid #ececec;
+    position: relative;
 }
 
-.navbar-nav {
-    width: 700px;
-    height: 80px;
+.navbar-menu {
+    width: 600px;
+    height: inherit;
     display: flex;
     justify-content: space-between;
+    font-weight: 400;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #434343;
+
+    >a {
+        font-weight: 400;
+        font-size: 1rem;
+        font-family: 'Open Sans', sans-serif;
+        color: #434343;
+        text-decoration: none;
+        margin-right: 10px;
+
+        >li {
+            box-sizing: border-box;
+            line-height: 56px;
+            border-bottom: solid 2px #ececec;
+        }
+    }
+
+    >a:hover {
+        cursor: pointer;
+        color: #238FAF;
+
+        >li {
+            border-bottom: solid 3px #238FAF;
+        }
+    }
 
     >li {
-        line-height: 71px;
-        border-bottom: solid 3px white;
+        box-sizing: border-box;
+        line-height: 56px;
+        border-bottom: solid 2px #ececec;
 
         span {
             margin-left: 8px;
         }
     }
 
-    li a,
-    li {
-        font-weight: 400;
-        font-size: 1.05rem;
-        font-family: 'Open Sans', sans-serif;
-        color: #434343;
-        text-decoration: none;
-    }
-
     >li:hover {
         cursor: pointer;
         color: #238FAF;
         border-bottom: solid 3px #238FAF;
-
-        >a {
-            color: #238FAF;
-        }
     }
 }
 
@@ -76,13 +93,15 @@ ul {
 
 .drop-down {
     position: absolute;
-    top: 80px;
+    top: 57px;
     display: none;
 
-    li {
-        padding: 0 20px;
-        a {
-            color:  #434343;
+    >a {
+        color: #434343;
+        text-decoration: none;
+
+        >li {
+            padding: 0 20px;
         }
     }
 }
@@ -95,6 +114,110 @@ ul {
     display: block;
 }
 
-.drop-down>li:hover {
+.drop-down>a:hover>li {
     background-color: #dddddd;
+}
+
+.bars {
+    display: none;
+    color: #434343;
+}
+
+@media (max-width: 820px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .bars {
+        display: block;
+        color: #434343;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .navbar-menu.reverse {
+        flex-direction: column;
+        width: 300px;
+        position: absolute;
+        top: 57px;
+        right: 0px;
+        display: block;
+
+        >a {
+            font-weight: 400;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+            margin: 0px;
+
+            >li {
+                box-sizing: border-box;
+                line-height: 56px;
+                border-bottom: solid 2px #25292c;
+                background-color: #212529;
+                padding: 0 30px;
+            }
+
+        }
+
+        >a:hover {
+            cursor: pointer;
+            color: white;
+
+            >li {
+                background-color: #339af0;
+                transition: .3s;
+            }
+        }
+
+        >li {
+            font-weight: 400;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+            margin-right: 10px;
+            margin: 0px;
+            box-sizing: border-box;
+            line-height: 56px;
+            border-bottom: solid 2px #25292c;
+            background-color: #212529;
+            padding: 0 30px;
+
+            span {
+                margin-left: 8px;
+            }
+        }
+
+        >li:hover {
+            cursor: pointer;
+            color: white;
+            background-color: #339af0;
+            transition: .3s;
+        }
+    }
+
+    .drop-down {
+        position: absolute;
+        top: 0px;
+        left: -180px;
+        display: none;
+        background-color: #212529;
+
+        >a {
+            color: white;
+            text-decoration: none;
+    
+            >li {
+                padding: 0 20px;
+            border-bottom: solid 2px #25292c;
+            }
+        }
+    }
+
+    .drop-down>a:hover>li {
+        background-color:  #339af0;
+        transition: .3s;
+    }
 }

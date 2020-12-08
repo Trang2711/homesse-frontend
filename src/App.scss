@@ -4,16 +4,20 @@
   border: none;
   outline: none;
 }
-
+@media screen and (max-width: 785px){
+  :root {
+    font-size: 15px;
+  }
+}
 @media screen and (min-width:768px) {
   :root {
-    font-size: calc(16px + 2 * ((100vw - 768px) / 598));
+    font-size: calc(15px + 2 * ((100vw - 768px) / 598));
   }
 }
 
 @media screen and (min-width:1366px) {
   :root {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
