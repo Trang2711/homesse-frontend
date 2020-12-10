@@ -1,6 +1,8 @@
 import './login.scss';
 import { Component } from 'react';
-
+import email from '../../images/email.png'
+import pass from '../../images/padlock.png'
+import warn from '../../images/exclamation-mark.png'
 class Login extends Component {
     render() {
         return(
@@ -11,17 +13,21 @@ class Login extends Component {
                         <h2>FIND YOUR HOME</h2>
                     </div>
                     <form className="form-login">
-                        <div>
-                            <input type="email" id="inputEmail" className="inputLogin" placeholder="Email"/>
+                        <div className="inputLogin">
+                            <input type="email" id="inputEmail" placeholder="Email"></input>
+                            <img src={email} className="icon-email"/>                            
+                            <img src={warn} className="icon-warn1" alt=""/>
+                        </div>
+                        <div className="inputLogin">
+                            <input type="password" id="inputPass" placeholder="Password"/>
+                            <img src={pass} className="icon-pass"/>
+                            <img src={warn} className="icon-warn2" alt=""/>
                         </div>
                         <div>
-                            <input type="password" id="inputPass" className="inputLogin" placeholder="Password"/>
-                        </div>
-                        <div>
-                            <label id="info-error"></label>
+                            <span id="info-error">hihihi</span>
                         </div>
                         <div className="register">
-                            <a href="">Don't you have an account?</a>
+                            <a href="">Don't you have an account? Sign Up</a>
                         </div>
                         <div className="btn">
                             <button type="button" id="btn-login">LOGIN</button>
