@@ -57,7 +57,8 @@ h2{
     color: red;
     margin: 0;
     font-size: 12px;
-    margin-left: 150px
+    margin-left: 150px;
+    display: none;
 }
 .register__button, .register__button-login{
     width: 130px;
@@ -115,9 +116,11 @@ sup{
     width: 25px;
     height: 25px;
     margin: 0 0 -8px 10px;
+    display: none;
 }
 .register__successful{
     color: green;
     margin: 0 0 10;
     margin-left: 150px;
+    display: none;
 }

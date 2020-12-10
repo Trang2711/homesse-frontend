@@ -11,7 +11,7 @@ class RegisterPage extends Component {
                         <h1>HOMESSE</h1>
                         <h2>FIND YOUR HOME</h2>
                     </div>
-                    <div className="form-register">
+                    <form className="form-register">
                         <div className="group-input">
                             <label>First Name<sup>*</sup>:</label>
                             <input type="text" className="required" />
@@ -67,10 +67,10 @@ class RegisterPage extends Component {
                             <br />
                             <p className="register__passerror">Mật khẩu không trùng khớp!</p>
                         </div>
-                        <div className="group-radio"> 
-                            <input type="radio" id="register__owner" value="owner"/>
+                        <div className="group-radio">
+                            <input type="radio" id="register__owner" value="owner" name="status"/>
                             <label for="owner">Owner</label>
-                            <input type="radio" id="register__renter" value="renter"/>
+                            <input type="radio" id="register__renter" value="renter" name="status"/>
                             <label for="renter">Renter</label>
                         </div>
                         <div className="group-input">
@@ -83,7 +83,7 @@ class RegisterPage extends Component {
                             <button className="register__button">REGISTER</button>
                             <button className="register__button-login">LOGIN</button>
                         </div>               
-                    </div>                   
+                    </form>                   
                 </div>
             </div>
         )
