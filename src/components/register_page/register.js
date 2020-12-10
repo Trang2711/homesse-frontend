@@ -15,24 +15,24 @@ class RegisterPage extends Component {
                         <div className="group-input">
                             <label>First Name<sup>*</sup>:</label>
                             <input type="text" className="required" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-fisrtname"/>
                             <br />
                         </div>
                         <div className="group-input">
                             <label>Last Name<sup>*</sup>:</label>
                             <input type="text" className="required" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-lastname"/>
                             <br />
                         </div>
                         <div className="group-input">
                             <label>Email<sup>*</sup>:</label>
                             <input type="email" className="required" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-email"/>
                         </div>
                         <div className="group-input">
                             <label>Phone<sup>*</sup>:</label>
                             <input type="text" className="required" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-phone"/>
                         </div>
                         <div className="group-input">
                             <label>Address<sup>*</sup>:</label>
@@ -51,19 +51,19 @@ class RegisterPage extends Component {
                                     <input type="text" id="address_numberhouse" className="info-address" placeholder="Số nhà"/>
                                 </div>     
                             </div>  
-                            <img src={warn} className="register__warning" alt=""/>                          
+                            <img src={warn} className="register__warning" id="warning-address"/>                          
                         </div>
                         <div className="group-input">
-                            <label>PassWord<sup>*</sup>:</label>
+                            <label>Password<sup>*</sup>:</label>
                             <input type="password" className="required"/>
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-password"/>
                             <br />
                             <p className="register__passerror">Mật khẩu phải hơn 8 ký tự, có chữ hoa, chữ thường, chữ số!</p>
                         </div>
                         <div className="group-input">
-                            <label>Confirm PassWord<sup>*</sup>:</label>
+                            <label>Confirm Password<sup>*</sup>:</label>
                             <input type="password" className="required" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-cfpassword"/>
                             <br />
                             <p className="register__passerror">Mật khẩu không trùng khớp!</p>
                         </div>
@@ -76,7 +76,7 @@ class RegisterPage extends Component {
                         <div className="group-input">
                             <label>ID Card:</label>
                             <input type="text" className="notreq" />
-                            <img src={warn} className="register__warning" alt=""/>
+                            <img src={warn} className="register__warning" id="warning-idcard"/>
                         </div>
                         <p className="register__successful">Bạn đã đăng ký thành công</p>
                         <div className="register__btn">
