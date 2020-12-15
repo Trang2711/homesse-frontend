@@ -2,13 +2,11 @@ body{
     height: 100%;
     width: 100%;
 }
-.main{
+.login__container{
     padding: 0;
     margin: 0;
-    //width: 1440px;
     height: 100vh;
     overflow: auto;
-    //background-position: center center;
     background: linear-gradient(
         rgba(1, 1, 1, 0.7), 
         rgba(1, 1, 1, 0.7)
@@ -16,83 +14,75 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.nameWeb{
+.login__inner{
+    width: 100%;
+    max-width: 350px;
+    margin: 170px auto;
+}
+.login__title{
     text-align: center;
     margin-bottom: 50px;
     color: white;
 }
-h1{
+.login__title__main{
     margin: 0px;
     font-size: 40px;
 }
-h2{
+.login__title__extra{
     margin: 0px;
     font-size: 15px;
 }
-.login{
-    width: 100%;
-    max-width: 350px;
-    max-height: 260px;
-    margin: 170px auto;
-}
+
 
 ::placeholder{
     color: rgba(231, 231, 231, 0.911);
 }
-#inputEmail, #inputPass {
-    width: 100%;
+
+.login__input{
+    width: 300px;
     border: 1px;
     text-align: left;
     padding-left: 10px;
     font-size: 16px;
     outline: none;
     display: inline-block;
-    height: 40px;
+    height: 35px;
     border-radius: 10px;
-    background-color: rgb(0, 115, 150);
+    background-color: #1EA4CB;
     opacity: 0.7;
     color: rgb(255, 255, 255);
+    margin-top: 10px;
 }
-
 .inputLogin{
     position: relative;
 }
 .icon-email {
     position: absolute;
     display: inline-block;  
-    right: 0px;
-    top: 5px;
+    right: 50px;
+    top: 13px;
     width: 30px;
     height: 30px;
     opacity: 0.4;
     filter: invert(100%);
 }
-.icon-warn1 {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -60px;
-    top: 10px;
-}
-.icon-warn2 {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -60px;
-    bottom: 8px;
-}
 .icon-pass {
     position: absolute;
     display: inline-block;  
-    right: 0px;
-    bottom: 5px;
+    right: 50px;
+    bottom: 4px;
     width: 30px;
     height: 30px;
     opacity: 0.4;
     filter: invert(100%);
 }
 
+
+.warning__login{
+    width: 25px;
+    height: 25px;
+    margin: 0 0 -8px 10px;
+}
 
 #inputPass{
     margin-top: 20px;
@@ -104,11 +94,11 @@ h2{
         color: white;
     }
 }
-.btn{
+.login__btn{
     text-align: center;
     margin-top: 30px;
 }
-#btn-login{
+.login__button{
     width: 150px;
     height: 40px;
     color: white;
@@ -118,6 +108,8 @@ h2{
     font-weight: bold;
     font-size: 17px;
 }
-#info-error{
-    color: rgb(221, 33, 33);
+#login__error{
+    color: red;
+    margin: 0;
+    font-size: 12px;
 }
