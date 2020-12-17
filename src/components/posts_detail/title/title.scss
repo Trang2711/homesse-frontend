@@ -1,0 +1,84 @@
+.title__container{
+    width: 800px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.title__header{
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+}
+.title__main{
+    font-size: 25px;
+    margin: 0;
+    flex: 3;
+}
+.title__money{
+    flex: 1;
+    color: #274ABB;
+}
+.money__post{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 9px;
+}
+.title__address{
+    margin-left: 5px;
+    position: relative;
+}
+.title__address__icon{
+    position: absolute;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+}
+
+.address__post{
+    display: inline-block;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 15px;
+}
+.title__footer{
+    display: flex;
+    flex-direction: row;
+    flex: 12;
+    margin-top: 50px;
+}
+.title__report__icon, .title__like__icon{
+    width: 20px;
+    height: 20px;
+    //margin-top: 15px;
+}
+.title__like{
+    flex: 1;
+}
+.title__follow{
+    flex: 7;
+}
+.title__savepost{
+    flex: 2;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #274ABB;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+.title__iconreport{
+    flex: 1;
+}
+.title__iconlike{
+    flex: 1;
+}
+#title__like, #title__follow{
+    margin: 0;
+    font-weight: bold;
+    color: gray;
+    margin-left: 5px;
+}

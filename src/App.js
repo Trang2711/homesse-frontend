@@ -5,6 +5,9 @@ import SearchPage from './components/search_page/search';
 import PersonalPage from './components/personal_page/personal';
 import './App.scss';
 
+import Title from './components/posts_detail/title/title';
+import InfoAuthor from './components/posts_detail/info_author/info_author';
+
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
