@@ -2,6 +2,8 @@ import HomePage from './components/home_page/home';
 import LoginPage from './components/login_page/login';
 import RegisterPage from './components/register_page/register';
 import SearchPage from './components/search_page/search';
+import Title from './components/posts_detail/title/title';
+import InfoAuthor from './components/posts_detail/info_author/info_author'
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
