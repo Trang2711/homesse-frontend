@@ -9,11 +9,8 @@ class Post extends Component {
         var sectionStyle = {
             backgroundImage: `url(${image})`
         };
-        var style = {
-            width: `${this.props.width}`
-        };
         return (
-            <div className="post" style={style}>
+            <div className="post">
                 <div className="post__image" style={sectionStyle}>
                     <i className="close-btn fas fa-times-circle"></i>
                 </div>

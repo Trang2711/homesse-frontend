@@ -10,9 +10,11 @@
         border-radius: 5px;
         text-align: right;
         color: rgba(0, 0, 0, 0.88);
+
         .close-btn {
             padding: 12px;
         }
+
         .close-btn:hover {
             color: black;
         }
@@ -51,5 +53,17 @@
 
     span {
         margin-left: 6px;
+    }
+}
+
+@media(max-width: 840px) {
+    .post .post__image {
+        height: 300px;
+    }
+}
+
+@media(max-width: 500px) {
+    .post .post__image {
+        height: 180px;
     }
 }

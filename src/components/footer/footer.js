@@ -10,7 +10,7 @@ function Footer() {
                         <i className="fal fa-map-marker-alt"></i>
                     </div>
                     <div className="footer-contact__description">
-                        Đại học Công Nghệ - Đại học quốc gia Hà Nội <br />
+                        Đại học Công Nghệ - ĐHQG Hà Nội,
                         144 Xuân Thủy, Cầu Giấy, Hà Nội
                     </div>
                 </div>

@@ -1,6 +1,5 @@
 .about-us__container {
-    width: 80%;
-    margin: 150px auto;
+    margin-bottom: 100px;
     display: flex;
     background-color: #EAEBEB;
 }
@@ -8,7 +7,7 @@
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     width: 45%;
-    padding: 60px 0 0 35px;
+    padding: 50px 0 50px 35px;
 }
 .about-us__header {
     font-size: 2rem;
@@ -32,8 +31,39 @@
     background-size: cover;
     background-position: center center;
     width: 55%;
-    height: 20rem;
+    height: inherit;
 }
 .trapezoid {
     clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
+}
+
+@media(max-width: 770px) {
+    .about-us__container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 35px;
+    }
+
+    .about-us__content {
+        padding: 50px 35px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .about-us__image{
+        width: 90%;
+        height: 300px;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}
+
+@media(max-width: 400px) {
+    .about-us__content {
+        padding: 30px 20px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .about-us__image{
+        height: 240px;
+    }
+}

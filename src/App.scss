@@ -4,6 +4,9 @@
   border: none;
   outline: none;
 }
+body{
+  overflow-x:hidden;
+}
 @media screen and (max-width: 785px){
   :root {
     font-size: 15px;
