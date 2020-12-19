@@ -1,7 +1,7 @@
 import './commented_post.scss';
 import { Component } from'react';
 
-import Post from '../../../components/post/post';
+import Post from '../../../components/post/post_big/post_big';
 
 class CommentedPost extends Component {
     render() {

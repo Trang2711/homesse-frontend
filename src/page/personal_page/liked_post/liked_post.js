@@ -1,6 +1,6 @@
 import './liked_post.scss';
 import { Component } from'react';
-import Post from '../../../components/post/post';
+import Post from '../../../components/post/post_big/post_big';
 
 class LikedPost extends Component {
     render() {

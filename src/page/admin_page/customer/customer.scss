@@ -1,0 +1,13 @@
+.owner-table {
+    min-width: 600px;
+    tr td:nth-child(3), tr td:nth-child(4){
+    // width: 100px;
+    text-align: center;
+    }
+}
+
+.customer__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+}

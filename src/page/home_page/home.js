@@ -2,7 +2,7 @@ import './home.scss';
 import Menu from '../../components/navigation/Menu';
 import BasicSearch from '../../components/basic_search/search';
 import Features from '../../components/features/features';
-import Post from '../../components/post/post';
+import Post from '../../components/post/post_big/post_big';
 import AboutUs from '../../components/about_us/about_us';
 import Footer from '../../components/footer/footer';
 

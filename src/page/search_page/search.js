@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import AdvanceSearch from '../../components/advance_search/search';
-import Post from '../../components/post/post';
+import Post from '../../components/post/post_big/post_big';
 import MenuLogin from '../../components/navigation/menu_login';
 import Footer from '../../components/footer/footer';
 

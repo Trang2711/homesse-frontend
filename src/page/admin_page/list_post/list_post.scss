@@ -1,0 +1,26 @@
+table, tr {
+    border-bottom: solid 1px rgba(75, 74, 74, 0.842);
+    border-collapse: collapse;
+}
+td, th {
+    padding: 15px 10px;
+}
+
+.post-table {
+    min-width: 600px;
+    tr td:nth-child(3), tr td:nth-child(4),tr td:nth-child(5){
+    width: 100px;
+    text-align: center;
+    }
+}
+
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+
+.fa-trash-alt {
+    margin-left: 5px;
+}

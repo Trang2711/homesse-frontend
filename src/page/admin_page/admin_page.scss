@@ -1,0 +1,15 @@
+.admin-page__container {
+    width: 80%;
+    margin: 80px auto 100px;
+    display: flex;
+}
+
+.admin-page__content {
+    flex-grow: 1;
+}
+
+@media(max-width: 1240px) {
+    .admin-page__container {
+      width: 90%;
+    }
+  }

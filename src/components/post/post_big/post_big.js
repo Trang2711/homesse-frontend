@@ -1,5 +1,5 @@
-import './post.scss';
-import area_icon from '../../images/area.svg';
+import './post_big.scss';
+import area_icon from '../../../images/area.svg';
 import { Component } from 'react';
 // import { BrowerRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -12,7 +12,6 @@ class Post extends Component {
         return (
             <div className="post">
                 <div className="post__image" style={sectionStyle}>
-                    <i className="close-btn fas fa-times-circle"></i>
                 </div>
                 <div className="post__content">
                     <div className="post__title">{title}</div>

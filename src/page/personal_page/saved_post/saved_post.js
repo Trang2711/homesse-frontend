@@ -1,7 +1,7 @@
 import './saved_post.scss';
 import { Component } from 'react';
 
-import Post from '../../../components/post/post';
+import Post from '../../../components/post/post_big/post_big';
 
 class SavedPost extends Component {
     render() {
