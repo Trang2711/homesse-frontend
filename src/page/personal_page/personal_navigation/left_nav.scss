@@ -1,6 +1,9 @@
 .left-nav-personal__container {
-    width: 350px;
+    max-width: 350px;
+    width: 50%;
+    min-width: 230px;
     font-family: 'Open Sans', sans-serif;
+    margin-right: 20px;
 }
 
 .left-nav-personal__inner {
@@ -30,15 +33,15 @@
 
     .drop-menu {
         width: 100%;
-        margin-left: 30px;
+        padding-left: 30px;
+        box-sizing: border-box;
 
         >li>a {
             display: block;
-            width: 320px;
             box-sizing: border-box;
             padding: 15px;
             margin: 10px 0;
-            color: rgba(9, 30, 66, .66);
+            color: rgba(6, 24, 54, 0.66);
             font-weight: 400;
             text-decoration: none;
         }
@@ -46,7 +49,7 @@
         li:hover>a {
             background-color: rgba(9, 30, 66, .08);
             border-radius: 4px;
-            color: rgba(9, 30, 66, .77);
+            color: #434343;
         }
     }
 }

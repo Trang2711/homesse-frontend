@@ -1,13 +1,14 @@
 import './saved_post.scss';
 import { Component } from 'react';
+
 import Post from '../../../components/post/post';
 
 class SavedPost extends Component {
     render() {
         return (
-            <div className="saved-post__container">
-                <h3 className="saved-post__title">Danh sách đã lưu</h3>
-                <div className="save-post__inner">
+            <div className="list-post__container">
+                <h3 className="list-post__title">Danh sách đã lưu</h3>
+                <div className="list-post__inner">
                     <Post width="23.8rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                         image="/static/media/banner_2.f5a8d2b0.jpg"
                         intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
