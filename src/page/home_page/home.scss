@@ -63,5 +63,15 @@ $blueColor: #238FAF;
     max-width: 700px;
     width: 100%;
     min-width: 330px;
+
+    .post__image {
+      height: 300px;
+  }
+  }
+}
+
+@media(max-width: 500px) {
+  .posts__container .post .post__image {
+      height: 180px;
   }
 }

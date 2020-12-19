@@ -10,25 +10,7 @@ class AdvanceSearch extends Component {
                     <form className="advance-search__form">
                         <div className="group-input">
                             <h2 className="group-input__title">Địa chỉ</h2>
-                            <select name="city">
-                                <option value="volvo">Thành phố / Tỉnh</option>
-                                <option value="saab">Hà Nội</option>
-                                <option value="fiat">Hải Phòng</option>
-                                <option value="audi">Tp. HCM</option>
-                            </select>
-
-                            <select name="district">
-                                <option value="volvo">Quận / Huyện</option>
-                                <option value="saab">Ba Đình</option>
-                                <option value="fiat">Cầu Giấy</option>
-                                <option value="audi">Nam Từ Liêm</option>
-                            </select>
-                            <select name="đường">
-                                <option value="volvo">Đường</option>
-                                <option value="saab">Phạm Hùng</option>
-                                <option value="fiat">Xuân Thủy</option>
-                                <option value="audi">Đê La Thành</option>
-                            </select>
+                            <input type="text" placeholder="Địa chỉ"/>
                         </div>
                         <div className="group-input">
                             <h2 className="group-input__title">Cơ sở vật chất</h2>

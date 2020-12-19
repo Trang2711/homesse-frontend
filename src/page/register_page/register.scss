@@ -21,7 +21,7 @@
     margin-bottom: 20px;
     color: white;
 }
-.group-input label{
+.form-register .group-input label{
     width: 150px;
     display: inline-block;
     color: white;
@@ -79,11 +79,11 @@
 #register__owner, #register__renter{
     margin-left: 30px;
 }
-.group-radio label{
+.form-register .group-radio label{
     color: white;
     width: 50px;
 }
-.group-radio{
+.form-register .group-radio{
     margin-top: 10px;
     margin-left: 120px;
 }

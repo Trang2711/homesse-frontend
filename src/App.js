@@ -1,8 +1,8 @@
-import HomePage from './components/home_page/home';
-import LoginPage from './components/login_page/login';
-import RegisterPage from './components/register_page/register';
-import SearchPage from './components/search_page/search';
-import PersonalPage from './components/personal_page/personal';
+import HomePage from './page/home_page/home';
+import LoginPage from './page/login_page/login';
+import RegisterPage from './page/register_page/register';
+import SearchPage from './page/search_page/search';
+import PersonalPage from './page/personal_page/personal';
 import './App.scss';
 
 import Title from './components/posts_detail/title/title';

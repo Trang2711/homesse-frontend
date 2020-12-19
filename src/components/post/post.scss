@@ -55,15 +55,3 @@
         margin-left: 6px;
     }
 }
-
-@media(max-width: 840px) {
-    .post .post__image {
-        height: 300px;
-    }
-}
-
-@media(max-width: 500px) {
-    .post .post__image {
-        height: 180px;
-    }
-}

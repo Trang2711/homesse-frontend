@@ -17,32 +17,32 @@ class SearchPage extends Component {
                         <h1 className="result__title">Kết quả tìm kiếm</h1>
                         <hr />
                         <div className="result-search_inner">
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
                                 area="25 m2" />
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
                                 area="25 m2" />
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
                                 area="25 m2" />
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
                                 area="25 m2" />
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
                                 area="25 m2" />
-                            <Post width="19rem" title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
+                            <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
                                 image="/static/media/banner_2.f5a8d2b0.jpg"
                                 intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
                                 money="3.500.000 đ"
