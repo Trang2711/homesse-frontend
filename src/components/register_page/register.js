@@ -6,18 +6,18 @@ class RegisterPage extends Component {
     constructor(props){
         super(props);
         this.state = {
-            txtFirstname : '',
-            txtLastname : '',
-            txtEmail : '',
-            txtPhone : '',
-            txtAddress : '',
-            txtPassword : '',
-            txtCfPassword : '',
-            txtIDcard : '',
-            status: 'renter',
+            firstname : '',
+            lastname : '',
+            email : '',
+            phone_number : '',
+            address : '',
+            password : '',
+            cfpassword : '',
+            cmnd : '',
+            role: 'renter',
             warningFirstname: false,
             warningLastName: false,
-            warningPhone: false,
+            warningphone_number: false,
             warningEmail: false,
             warningPassword: false,
             warningCfPassword: false,
@@ -49,11 +49,11 @@ class RegisterPage extends Component {
         if(this.checkFirstname() === false) return false;
         if(this.checkLastname() === false) return false;
         if(this.checkEmail() === false) return false;
-        if(this.checkPhone() === false) return false;
+        if(this.checkphone_number() === false) return false;
         if(this.checkAddress() === false) return false;
         if(this.checkPassword() === false) return false;
         if(this.checkCfPassword() === false) return false;
-        if(this.checkStatus() === true){
+        if(this.checkrole() === true){
             if(this.checkIdCard() === false) return false;
         }
         return true;
@@ -61,8 +61,8 @@ class RegisterPage extends Component {
 
     //kiem tra firstname
     checkFirstname(){
-        const {txtFirstname} = this.state;
-        if(txtFirstname.length === 0){
+        const {firstname} = this.state;
+        if(firstname.length === 0){
             this.setState({
                 warningFirstname: true
             })
@@ -77,8 +77,8 @@ class RegisterPage extends Component {
 
     //kiem tra lastname
     checkLastname(){
-        const {txtLastname} = this.state;
-        if(txtLastname.length === 0){
+        const {lastname} = this.state;
+        if(lastname.length === 0){
             this.setState({
                 warningLastName: true
             })
@@ -93,9 +93,9 @@ class RegisterPage extends Component {
 
     //kiem tra email
     checkEmail(){
-        const {txtEmail} = this.state;
+        const {email} = this.state;
         const regexEmail = /\S+@\S+\.\S+/;
-        if (!regexEmail.test(txtEmail) && txtEmail.length === 0) {
+        if (!regexEmail.test(email) && email.length === 0) {
             this.setState({
                 warningEmail: true
             })
@@ -110,8 +110,8 @@ class RegisterPage extends Component {
 
     //kiểm tra địa chỉ
     checkAddress(){
-        const {txtAddress} = this.state;
-        if(txtAddress.length === 0){
+        const {address} = this.state;
+        if(address.length === 0){
             this.setState({
                 warningAddress: true
             })
@@ -125,14 +125,14 @@ class RegisterPage extends Component {
     }
 
     //kiểm tra trạng thái người dùng
-    checkStatus(){
-        const {status} = this.state;
-        if(status === "owner"){
+    checkrole(){
+        const {role} = this.state;
+        if(role === "owner"){
             return true;
         }
         else{
             this.setState({
-                txtIDcard: ""
+                cmnd: ""
             })
             return false;
         }
@@ -141,9 +141,9 @@ class RegisterPage extends Component {
 
     //kiểm tra thẻ cmnd
     checkIdCard(){
-        const {txtIDcard} = this.state;
+        const {cmnd} = this.state;
         const regexIdcard = /^[0-9]{9}$/;
-        if (!regexIdcard.test(txtIDcard) && txtIDcard.length !== 9) {
+        if (!regexIdcard.test(cmnd) && cmnd.length !== 9) {
             this.setState({
                 warningIdcard: true
             })
@@ -156,20 +156,20 @@ class RegisterPage extends Component {
         }
     }
 
-    //kiểm tra phone
-    checkPhone(){
-        const {txtPhone} = this.state;
-        const regexPhone = /^[0-9]{10}$/;
-        if(txtPhone.length !== 10 && !regexPhone.test(txtPhone)){
-            document.getElementById("register__phoneError").innerText = "Số điện thoại phải đúng 10 số";
+    //kiểm tra phone_number
+    checkphone_number(){
+        const {phone_number} = this.state;
+        const regexphone_number = /^[0-9]{10}$/;
+        if(phone_number.length !== 10 && !regexphone_number.test(phone_number)){
+            document.getElementById("register__phone_numberError").innerText = "Số điện thoại phải đúng 10 số";
             this.setState({
-                warningPhone: true
+                warningphone_number: true
             })
             return false;
         }else{
-            document.getElementById("register__phoneError").innerText = "";
+            document.getElementById("register__phone_numberError").innerText = "";
             this.setState({
-                warningPhone: false
+                warningphone_number: false
             })
             return true;
         }
@@ -177,9 +177,9 @@ class RegisterPage extends Component {
 
     //kiểm tra mk
     checkPassword(){
-        const {txtPassword} = this.state;
+        const {password} = this.state;
         const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-        if(!regexPass.test(txtPassword)){
+        if(!regexPass.test(password)){
             document.getElementById("register__passError").innerText = "Mật khẩu phải hơn 8 ký tự, có chữ hoa, chữ thường, chữ số!";
             this.setState({
                 warningPassword: true
@@ -196,8 +196,8 @@ class RegisterPage extends Component {
 
     //kiểm tra cf mk
     checkCfPassword(){
-        const {txtPassword, txtCfPassword} = this.state;
-        if(txtPassword !== txtCfPassword){
+        const {password, cfpassword} = this.state;
+        if(password !== cfpassword){
             document.getElementById("register__cfpassError").innerText = "Mật khẩu không trùng khớp!";
             this.setState({
                 warningCfPassword: true
@@ -225,9 +225,9 @@ class RegisterPage extends Component {
                             <input 
                                 type="text" 
                                 className="required" 
-                                name="txtFirstname"
+                                name="firstname"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtFirstname}
+                                value={this.state.firstname}
                             />
                             {
                                 this.state.warningFirstname?
@@ -241,9 +241,9 @@ class RegisterPage extends Component {
                             <input 
                                 type="text" 
                                 className="required" 
-                                name="txtLastname"
+                                name="lastname"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtLastname}
+                                value={this.state.lastname}
                             />
                             {
                                 this.state.warningLastName?
@@ -257,9 +257,9 @@ class RegisterPage extends Component {
                             <input 
                                 type="email" 
                                 className="required" 
-                                name="txtEmail"
+                                name="email"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtEmail}
+                                value={this.state.email}
                             />
                             {
                                 this.state.warningEmail?
@@ -268,30 +268,30 @@ class RegisterPage extends Component {
                             }                           
                         </div>
                         <div className="group-input">
-                            <label>Phone<sup>*</sup>:</label>
+                            <label>phone_number<sup>*</sup>:</label>
                             <input 
                                 type="text" 
                                 className="required" 
-                                name="txtPhone"
+                                name="phone_number"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtPhone}
+                                value={this.state.phone_number}
                             />
                             {
-                                this.state.warningPhone?
-                                <img src={warn} className="register__warning" id="warning-phone"/>
+                                this.state.warningphone_number?
+                                <img src={warn} className="register__warning" id="warning-phone_number"/>
                                 :null
                             }
                             <br/>
-                            <p className="register__error" id="register__phoneError"></p>
+                            <p className="register__error" id="register__phone_numberError"></p>
                         </div>
                         <div className="group-input">
                             <label>Address<sup>*</sup>:</label>
                             <input 
                                 type="text" 
                                 className="required" 
-                                name="txtAddress"
+                                name="address"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtAddress}
+                                value={this.state.address}
                             />
                             {
                                 this.state.warningAddress?
@@ -304,9 +304,9 @@ class RegisterPage extends Component {
                             <input 
                                 type="password" 
                                 className="required"
-                                name="txtPassword"
+                                name="password"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtPassword}
+                                value={this.state.password}
                             />
                             {
                                 this.state.warningPassword?
@@ -321,9 +321,9 @@ class RegisterPage extends Component {
                             <input 
                                 type="password" 
                                 className="required" 
-                                name="txtCfPassword"
+                                name="cfpassword"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtCfPassword}
+                                value={this.state.cfpassword}
                             />
                             {
                                 this.state.warningCfPassword?
@@ -338,32 +338,32 @@ class RegisterPage extends Component {
                                 type="radio" 
                                 id="register__owner" 
                                 value="owner" 
-                                name="status"
+                                name="role"
                                 onChange={ this.onHandleChange}
-                                checked= { this.state.status === "owner" }
+                                checked= { this.state.role === "owner" }
                             />
                             <label for="owner">Owner</label>
                             <input 
                                 type="radio" 
                                 id="register__renter" 
                                 value="renter" 
-                                name="status"
+                                name="role"
                                 onChange={ this.onHandleChange}
-                                checked= { this.state.status === "renter" }
+                                checked= { this.state.role === "renter" }
                             />
                             <label for="renter">Renter</label>
                         </div>
                         <div className="group-input">
                             {
-                                this.state.status === "owner"?
+                                this.state.role === "owner"?
                                 <div>
                                     <label>ID Card<sup>*</sup>:</label>
                                     <input 
                                         type="text" 
                                         className="required" 
-                                        name="txtIDcard"
+                                        name="cmnd"
                                         onChange={ this.onHandleChange}
-                                        value={this.state.txtIDcard}
+                                        value={this.state.cmnd}
                                     />
                                     {
                                         this.state.warningIdcard?
@@ -371,7 +371,7 @@ class RegisterPage extends Component {
                                         :null
                                     }
                                 </div>
-                                :(null && this.setState({txtIDcard: ''}))
+                                :(null && this.setState({cmnd: ''}))
                             }                 
                         </div>
                         <p className="register__successful">Bạn đã đăng ký thành công</p>
