@@ -8,11 +8,12 @@ import MenuLogin from '../../components/navigation/menu_login';
 import Footer from '../../components/footer/footer';
 import LeftNav from './personal_navigation/left_nav';
 
-import InfoPersonal from './info_personal/info_personal';
+import InfoPersonal from '../../components/info_personal/info_personal';
 import SavedPost from './saved_post/saved_post';
 import LikedPost from './liked_post/liked_post';
 import CommentedPost from './commented_post.js/commented_post';
 import ReportedPost from './reported_post/reported_post';
+import EditInfoModal from '../../components/modal/edit_info';
 
 
 function PersonalPage() {
@@ -63,6 +64,7 @@ function PersonalPage() {
                         </Switch>
                     </div>
                 </div>
+                
                 <Footer />
             </div>
         </Router>

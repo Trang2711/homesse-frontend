@@ -11,7 +11,7 @@ function InfoPersonal (props) {
             <div className="info-personal__container">
                 <div className="avatar__container">
                     <div className="avatar__image"></div>
-                    <div className="avatar__name">{fullName}<i className="fas fa-edit"></i></div>
+                    <div className="avatar__name">{fullName}<i className="fas fa-edit" ></i></div>
                 </div>
                 <div className="info__container">
                     <div className="info-col">

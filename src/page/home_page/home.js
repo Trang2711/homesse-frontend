@@ -1,5 +1,6 @@
 import './home.scss';
 import Menu from '../../components/navigation/Menu';
+import MenuLogin from '../../components/navigation/menu_login';
 import BasicSearch from '../../components/basic_search/search';
 import Features from '../../components/features/features';
 import Post from '../../components/post/post_big/post_big';
@@ -13,6 +14,7 @@ import { useHistory } from "react-router-dom";
 function Home() {
 
   const [postList, setPostList] = useState([]);
+  const loginSuccess = true;
   const history = useHistory();
 
   useEffect(() => {
@@ -34,7 +36,7 @@ function Home() {
 
   return (
     <div className="home-page">
-      <Menu />
+      { (loginSuccess) ? (<MenuLogin/>) : (<Menu/>)}
       <div className="home-buffer"></div>
       <BasicSearch />
       <div className="home-page__container">

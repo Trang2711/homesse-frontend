@@ -1,0 +1,132 @@
+.create-post__title {
+    margin-bottom: 20px;
+}
+.create-post-form {
+    min-width: 400px;
+    max-width: 700px;
+
+    button[type=submit] {
+        padding: 10px 15px;
+        border-radius: 7px;
+        background-color: #1b83a2;
+        color: white;
+    }
+
+    button[type=submit]:hover {
+        box-shadow: 0 0 7px #22505f;
+    }
+}
+
+.create-post-form {
+    .form-group {
+        margin-bottom: 15px;
+
+        >textarea,
+        >input[type=text],
+        >input[type=number],
+        >select {
+            // width: 100%;
+            border: solid 1px #717171;
+            border-radius: 5px;
+            padding: 10px 10px;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #393838;
+            width: 100%;
+
+        }
+
+        >textarea:focus,
+        >input[type=text]:focus,
+        >input[type=number]:focus,
+        >select:focus {
+            border-color: #2692b3;
+            box-shadow: 0 0 5px #1b83a2;
+            ;
+        }
+
+        ::placeholder {
+            font-family: 'Open Sans', sans-serif;
+            color: #393838;
+            font-size: 1rem;
+        }
+
+        >label {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: black;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 7px;
+        }
+    }
+
+
+}
+
+.input-group-append {
+    display: inline-block;
+    // border: solid 1px #717171;
+    border-radius: 5px;
+    height: inherit;
+    width: 100%;
+    display: flex;
+
+
+    input {
+        padding: 10px 10px;
+        border: solid 1px #717171;
+        border-radius: 5px 0px 0px 5px;
+        width: 100%;
+
+    }
+
+    span {
+        padding: 10px;
+        border: solid 1px #717171;
+        border-left: none;
+        border-radius: 0px 5px 5px 0px;
+    }
+}
+
+.check-box-group {
+    margin-bottom: 7px;
+    width: 150px;
+
+    input[type=checkbox] {
+        margin-right: 5px;
+    }
+}
+
+.form-group__inner {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.form-group__left {
+    margin-right: 50px;
+}
+
+input:focus {
+    border-color: #2692b3;
+    box-shadow: 0 0 5px #1b83a2;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    .form-group{
+        width: 49%;
+    }
+}
+
+.form-row:first-child{
+    margin-right: 20px;
+}
+
+.error {
+    border-color: red;
+    border-width: 2px;
+}

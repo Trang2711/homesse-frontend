@@ -6,6 +6,7 @@ import PersonalPage from './page/personal_page/personal';
 import AdminPage from './page/admin_page/admin_page';
 import NotFound from './components/not_found/not_found';
 import BoardingPage from './page/boarding_page/boarding_page';
+import OwnerPage from './page/owner_page/owner_page'
 import './App.scss';
 
 import React from "react";
@@ -24,6 +25,8 @@ function App() {
         <Route path="/search" component={SearchPage}>
         </Route>
         <Route path="/personal" component={PersonalPage}>
+        </Route>
+        <Route path="/owner" component={OwnerPage}>
         </Route>
         <Route path="/admin" component={AdminPage}>
         </Route>
