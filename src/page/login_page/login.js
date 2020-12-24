@@ -7,8 +7,8 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            txtEmail : '',
-            txtPassword : '',
+            email : '',
+            password : '',
             warningEmail: false,
             warningPassword: false
         };
@@ -37,9 +37,9 @@ class Login extends Component {
     }
 
     checkEmail(){
-        const {txtEmail} = this.state;
+        const {email} = this.state;
         const regexEmail = /\S+@\S+\.\S+/;
-        if (!regexEmail.test(txtEmail) && txtEmail.length === 0) {
+        if (!regexEmail.test(email) && email.length === 0) {
             document.getElementById("login__error").innerText = "Email hoặc mật khẩu không đúng!";
             this.setState({
                 warningEmail: true
@@ -55,9 +55,9 @@ class Login extends Component {
     }
 
     checkPassword(){
-        const {txtPassword} = this.state;
+        const {password} = this.state;
         const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-        if(!regexPass.test(txtPassword)){
+        if(!regexPass.test(password)){
             document.getElementById("login__error").innerText = "Email hoặc mật khẩu không đúng!";
             this.setState({
                 warningPassword: true
@@ -85,9 +85,9 @@ class Login extends Component {
                                 type="email" 
                                 className="login__input" 
                                 placeholder="Email"
-                                name="txtEmail"
+                                name="email"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtEmail}
+                                value={this.state.email}
                             />
                             <img src={email} className="icon-email"/>
                             {
@@ -102,9 +102,9 @@ class Login extends Component {
                                 type="password" 
                                 className="login__input" 
                                 placeholder="Password"
-                                name="txtPassword"
+                                name="password"
                                 onChange={ this.onHandleChange}
-                                value={this.state.txtPassword}
+                                value={this.state.password}
                             />
                             <img src={pass} className="icon-pass"/>
                             {
