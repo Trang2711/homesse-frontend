@@ -36,7 +36,7 @@ class MenuLogin extends Component {
                             <span>
                                 {this.props.userName}</span>
                             <ul className="drop-down">
-                                <Link to="/personal-page"><li>Trang cá nhân</li></Link>
+                                <Link to="/personal"><li>Trang cá nhân</li></Link>
                                 <Link to="/"><li>Đăng xuất</li></Link>
                             </ul>
                         </li>
