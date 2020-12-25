@@ -1,16 +1,22 @@
 import './post_big.scss';
 import area_icon from '../../../images/area.svg';
-import { Component } from 'react';
-// import { BrowerRouter as Router, Route, Link } from 'react-router-dom';
 
-class Post extends Component {
-    render() {
-        const { title, image, intro, money, area } = this.props;
+function Post(props) {
+
+        const { id, title, image, intro, money, area, onPostClick } = props;
+
         var sectionStyle = {
             backgroundImage: `url(${image})`
         };
+
+        function handleClick() {
+            if(onPostClick){
+                onPostClick(id);
+            }
+        }
+
         return (
-            <div className="post">
+            <div className="post" onClick={() => handleClick()}>
                 <div className="post__image" style={sectionStyle}>
                 </div>
                 <div className="post__content">
@@ -29,7 +35,6 @@ class Post extends Component {
                 </div>
             </div>
         )
-    }
 }
 
 export default Post;

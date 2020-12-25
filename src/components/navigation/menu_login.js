@@ -4,11 +4,13 @@ import { Component } from 'react';
 import { Link } from "react-router-dom";
 
 class MenuLogin extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             closeMenu: true
         };
+        
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -22,6 +24,7 @@ class MenuLogin extends Component {
         localStorage.removeItem("token");
     }
     render() {
+        const role = "RENTER";
         return (
             <div className="navbar">
                 <div className="navbar__top"></div>
@@ -38,7 +41,7 @@ class MenuLogin extends Component {
                             <span>
                                 {this.props.userName}</span>
                             <ul className="drop-down">
-                                <Link to="/personal-page"><li>Trang cá nhân</li></Link>
+                                <Link to={(role === 'OWNER' ? '/owner' : '/personal')}><li>Trang cá nhân</li></Link>
                                 <Link to="/" onClick={this.logOut}><li>Đăng xuất</li></Link>
                             </ul>
                         </li>

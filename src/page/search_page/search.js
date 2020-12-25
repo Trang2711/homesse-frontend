@@ -21,9 +21,9 @@ class SearchPage extends Component {
         }
     }
     render() {
-        if(this.state.LoggedIn === false){
-            return <Redirect to="/"/>
-        }
+        // if(this.state.LoggedIn === false){
+        //     return <Redirect to="/"/>
+        // }
         return (
             <div className="search-page">
                 <MenuLogin userName="Trang Trịnh" />

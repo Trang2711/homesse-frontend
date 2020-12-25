@@ -7,7 +7,7 @@
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    background-image: url('../../../images/avatar1.jpg');
+    background-image: url('../../images/avatar1.jpg');
     background-position: center center;
     background-size: cover;
     margin-bottom: 25px;
@@ -37,6 +37,7 @@
 
 .info-group {
     margin-bottom: 20px;
+    min-height: 44.8px;
     >i {
         margin-right: 13px;
         color: #238FAF;

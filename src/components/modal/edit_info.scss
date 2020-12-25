@@ -1,0 +1,27 @@
+dialog {
+    border: none;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    max-width: 80%;
+}
+
+dialog[open] {
+    animation: toggle-modal .3s ease-in-out;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.89);
+}
+
+@keyframes toggle-modal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* header */

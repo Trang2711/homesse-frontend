@@ -268,7 +268,7 @@ class RegisterPage extends Component {
                             }                           
                         </div>
                         <div className="group-input">
-                            <label>phone_number<sup>*</sup>:</label>
+                            <label>Phone<sup>*</sup>:</label>
                             <input 
                                 type="text" 
                                 className="required" 

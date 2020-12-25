@@ -1,8 +1,8 @@
 import './post_detail.scss';
 import React from 'react';
 
-import Menu from '../navigation/Menu';
-import MenuLogin from '../navigation/menu_login'
+import Menu from '../../components/navigation/Menu';
+import MenuLogin from '../../components/navigation/menu_login'
 import Title from './title/title';
 import InfoAuthor from './info_author/info_author';
 import DescriptionDetail from './description_detail/desc_detail';
@@ -10,7 +10,7 @@ import Facility from './facilities/facilities';
 import DescriptionExtra from './description_extra/description_extra';
 import Image from './image/image';
 import Comment from './comment/comment';
-import Footer from '../footer/footer';
+import Footer from '../../components/footer/footer';
 
 function PostDetail(){
     return(

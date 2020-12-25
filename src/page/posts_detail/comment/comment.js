@@ -51,7 +51,6 @@ function Comment(){
                                 <img src={star} className="review_star" alt=""/>
                             </div>
                         </div>
-                       {/* // <button type="button" className="btn__addimage">Thêm hình ảnh</button> */}
                         <input name="images" type='file' className="btn__addimage" multiple accept="image/gif, image/jpeg, image/png"/>
                     </div>
                     
