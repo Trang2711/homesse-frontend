@@ -8,6 +8,12 @@ import './App.scss';
 
 import Title from './components/posts_detail/title/title';
 import InfoAuthor from './components/posts_detail/info_author/info_author';
+import DescriptionDetail from './components/posts_detail/description_detail/desc_detail';
+import Facility from './components/posts_detail/facilities/facilities';
+import DescriptionExtra from './components/posts_detail/description_extra/description_extra';
+import Image from './components/posts_detail/image/image';
+import Comment from './components/posts_detail/comment/comment';
+import PostDetail from './components/posts_detail/post_detail'
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

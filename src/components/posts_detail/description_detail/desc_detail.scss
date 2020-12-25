@@ -1,0 +1,41 @@
+.desc_detail__container{
+    width: 800px;
+    height: 250px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 7px rgba(9, 8, 8, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+.desc_detail__title{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.underlined{
+    width: 70px;
+    height: 3px;
+    background-color: #274ABB;
+    margin-left: 20px;
+}
+.description{
+    display: inline-block;
+}
+.label_description{
+    font-weight: 600;
+    color: rgb(51, 51, 51);
+}
+.description_detail{
+    display: flex;
+    flex-direction: row;
+    flex: 6;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.description_detail1{
+    flex: 2;
+}
+.description_detail2{
+    flex: 4;
+}
+.desc_detail{
+    margin-top: 15px;
+}

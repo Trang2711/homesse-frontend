@@ -1,0 +1,31 @@
+.facilities__container{
+    width: 800px;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 0px 0px 7px rgba(9, 8, 8, 0.25);
+}
+.facilities__title{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.underlined_facilities{
+    width: 70px;
+    height: 3px;
+    background-color: #274ABB;
+    margin-left: 20px;
+}
+.facilities{
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+.facility__detail{
+    flex: 1;
+}
+.facilities__name{
+    margin-top: 20px;
+}

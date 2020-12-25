@@ -18,7 +18,9 @@ class MenuLogin extends Component {
         }));
         console.log('close');
     }
-
+    logOut(){
+        localStorage.removeItem("token");
+    }
     render() {
         return (
             <div className="navbar">
@@ -37,7 +39,7 @@ class MenuLogin extends Component {
                                 {this.props.userName}</span>
                             <ul className="drop-down">
                                 <Link to="/personal-page"><li>Trang cá nhân</li></Link>
-                                <Link to="/"><li>Đăng xuất</li></Link>
+                                <Link to="/" onClick={this.logOut}><li>Đăng xuất</li></Link>
                             </ul>
                         </li>
                     </ul>

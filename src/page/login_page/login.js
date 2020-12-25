@@ -3,14 +3,24 @@ import { Component } from 'react';
 import email from '../../images/email.png'
 import pass from '../../images/padlock.png'
 import warn from '../../images/exclamation-mark.png'
+import { Redirect } from 'react-router-dom'
+
 class Login extends Component {
     constructor(props){
         super(props);
+        const token = localStorage.getItem("token");
+
+        let LoggedIn = true;
+        if(token == null){
+            LoggedIn = false;
+        }
+
         this.state = {
             email : '',
             password : '',
             warningEmail: false,
-            warningPassword: false
+            warningPassword: false,
+            LoggedIn
         };
         this.onHandleChange = this.onHandleChange.bind(this);
         this.onHandleSubmit = this.onHandleSubmit.bind(this);
@@ -28,6 +38,12 @@ class Login extends Component {
         const validation = this.validationForm();
         if(validation){
             console.log(this.state);
+            if(this.state.email == "pthuc26@gmail.com" && this.state.password == "Thucnamsao123"){
+                localStorage.setItem("token", "dvnsjdvnsjvndj");
+                this.setState({
+                    LoggedIn: true
+                })
+            }
         }
     }
     validationForm(){
@@ -72,6 +88,9 @@ class Login extends Component {
         }
     }
     render() {
+        if(this.state.LoggedIn){
+            return <Redirect to="/"/>
+        }
         return(
             <div className="login__container">
                 <div className="login__inner">
