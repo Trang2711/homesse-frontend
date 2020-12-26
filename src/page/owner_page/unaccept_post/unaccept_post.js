@@ -3,13 +3,11 @@ import { useState, useEffect, useRef } from 'react';
 import { useHistory } from "react-router-dom";
 import postApi from '../../../api/postApi';
 import { useSelector } from 'react-redux';
-// import store from '../../../store';
 
 import Post from '../../../components/post/post_big/post_big';
-// import CreatePost from '../create_post/create_post';
 import EditPostForm from '../edit_post/edit_post';
 
-function UnacceptPost(props) {
+function UnacceptPost() {
 
     const [posts, setPost] = useState([]);
     const dialog = useRef(null);
