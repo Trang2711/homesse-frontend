@@ -94,10 +94,10 @@ function OwnerPage() {
                                 <CreatePost onSubmit={handleSubmitCreatePost} />
                             </Route>
                             <Route path="/owner/accept-post">
-                                <AcceptPost posts={acceptPosts}/>
+                                <AcceptPost/>
                             </Route>
                             <Route path="/owner/unaccept-post">
-                                <UnacceptPost posts={unAcceptPosts}/>
+                                <UnacceptPost/>
                             </Route>
                         </Switch>
                     </div>

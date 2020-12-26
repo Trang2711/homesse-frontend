@@ -1,9 +1,11 @@
-import './create_post.scss';
+import './edit_post.scss';
 import { useForm } from "react-hook-form";
 import React, { useEffect, useState } from "react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
+
+import postApi from '../../../api/postApi';
 
 const CreatePostSchema = yup.object().shape({
     // title: yup.string().max(65).required(),
@@ -15,7 +17,27 @@ const CreatePostSchema = yup.object().shape({
 });
 
 
-function CreatePost(props) {
+function EditPostForm(props) {
+
+    const {onFormClose, postId} = props;
+
+    
+    console.log(postId);
+    const [post, setPost] = useState();
+
+    useEffect(() => {
+        async function fetchPost() {
+            try {
+                const params = { id: postId };
+                const res = await postApi.getPosts(params);
+                console.log(res);
+                setPost(res[0]);
+            } catch (error) {
+                console.log("Error when fetching userInfo: " + error);
+            }
+        }
+        if(postId) fetchPost();
+    }, [postId]);
 
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(CreatePostSchema)
@@ -28,14 +50,21 @@ function CreatePost(props) {
 
     const onSubmit = (data) => { alert(JSON.stringify(data));
     };
-      
+
+    function handleCloseForm() {
+        console.log("close form");
+        if(onFormClose){
+            onFormClose();
+        }
+    }
+
     return (
-        <div className="create-post__container">
-            <h3 className="create-post__title">Tạo bài viết mới</h3>
-            <form className="create-post-form dialog" ref={register} onSubmit={handleSubmit(onSubmit)}>
+        <div className="edit-post__container">
+            <h3 className="edit-post__title">Tạo bài viết mới</h3>
+            <form method="dialog" className="edit-post-form" ref={register} onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Tiêu đề bài viết<sup>*</sup></label>
-                    <textarea name="title" id="" cols="30" rows="2" placeholder="Tiêu đề" ref={register}></textarea>
+                    <textarea name="title" id="" cols="30" rows="2" placeholder="Tiêu đề" value={post&&post.title}  ref={register}></textarea>
                     {errors.title && <p>{errors.title.message}</p>}
                 </div>
                 <div className="form-group">
@@ -43,7 +72,7 @@ function CreatePost(props) {
                     <div className="form-group">
                         <label>Giá cả<sup>*</sup></label>
                         <div class="input-group-append">
-                            <input type="number" name="price" id="" placeholder="3000000" ref={register} />
+                            <input type="number" name="price" id="" placeholder="3000000" value={post&&post.price} ref={register} />
                             <span>VNĐ <sup></sup></span>
                         </div>
                     </div>
@@ -146,10 +175,13 @@ function CreatePost(props) {
                     <input name="images" type='file' multiple accept="image/gif, image/jpeg, image/png" ref={register}/>
                     <div className="upload__container"></div>
                 </div>
-                <button type="submit">Đăng bài</button>
+                <div className="form__footer">
+                    <button className="btn--grey mr" onClick={handleCloseForm}>Hủy bỏ</button>
+                    <button className="btn--blue" type="submit" onClick={handleCloseForm}>Áp dụng</button>
+                </div>
             </form>
         </div >
     )
 }
 
-export default CreatePost;
+export default EditPostForm;
