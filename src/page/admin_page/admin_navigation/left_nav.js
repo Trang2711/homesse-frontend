@@ -11,7 +11,7 @@ class LeftNav extends Component {
                         <Link to="/admin/list-post"><i className="fas fa-list-ul"></i>Danh sách bài viết</Link>
                     </li>
                     <li>
-                        <Link><i class="far fa-chart-line"></i>Báo cáo</Link>
+                        <Link to="#"><i className="far fa-chart-line"></i>Báo cáo</Link>
                         <ul className="drop-menu">
                             <li><Link to="/admin/report/post">Báo cáo theo bài viết</Link></li>
                             <li><Link to="/admin/report/time">Báo cáo theo thời gian</Link></li>
@@ -19,7 +19,7 @@ class LeftNav extends Component {
                         </ul>
                     </li>
                     <li>
-                        <Link to="/admin/customer"><i class="far fa-user-friends"></i>Khách hàng</Link>
+                        <Link to="/admin/customer"><i className="far fa-user-friends"></i>Khách hàng</Link>
                     </li>
                 </ul>
             </div>

@@ -35,7 +35,6 @@ function UnacceptPost() {
     }
 
     function deletePost(postId) {
-        console.log(postId);
         let newPosts = posts.filter((post) => {
             return post.id !== postId;
         });
@@ -53,7 +52,6 @@ function UnacceptPost() {
     }
 
     function handleCloseForm() {
-        console.log("close");
         dialog.current.close();
     }
 

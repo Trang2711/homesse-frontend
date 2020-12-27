@@ -38,7 +38,7 @@ class Login extends Component {
         const validation = this.validationForm();
         if(validation){
             console.log(this.state);
-            if(this.state.email == "pthuc26@gmail.com" && this.state.password == "Thucnamsao123"){
+            if(this.state.email === "pthuc26@gmail.com" && this.state.password === "Thucnamsao123"){
                 localStorage.setItem("token", "dvnsjdvnsjvndj");
                 this.setState({
                     LoggedIn: true

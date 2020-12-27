@@ -1,6 +1,6 @@
 import './create_post.scss';
 import { useForm } from "react-hook-form";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
@@ -32,29 +32,29 @@ function CreatePost(props) {
     return (
         <div className="create-post__container">
             <h3 className="create-post__title">Tạo bài viết mới</h3>
-            <form className="create-post-form dialog" ref={register} onSubmit={handleSubmit(onSubmit)}>
+            <form className="create-post-form" ref={register} onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Tiêu đề bài viết<sup>*</sup></label>
                     <textarea name="title" id="" cols="30" rows="2" placeholder="Tiêu đề" ref={register}></textarea>
                     {errors.title && <p>{errors.title.message}</p>}
                 </div>
-                <div className="form-group">
                 <div className="form-row">
                     <div className="form-group">
                         <label>Giá cả<sup>*</sup></label>
-                        <div class="input-group-append">
+                        <div className="input-group-append">
                             <input type="number" name="price" id="" placeholder="3000000" ref={register} />
                             <span>VNĐ <sup></sup></span>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>Diện tích<sup>*</sup></label>
-                        <div class="input-group-append">
+                        <div className="input-group-append">
                             <input type="number" name="area" id="" placeholder="Diện tích sử dụng" ref={register}/>
                             <span>m<sup style={{ color: "#393838" }}>2</sup></span>
                         </div>
                     </div>
                 </div>
+                <div className="form-group">
                     <label>Địa chỉ<sup>*</sup></label>
                     <input type="text" name="address" id="" placeholder="Địa chỉ chi tiết" ref={register} />
                 </div>

@@ -7,12 +7,12 @@ import * as yup from 'yup';
 
 import postApi from '../../../api/postApi';
 
-const CreatePostSchema = yup.object().shape({
-    // title: yup.string().max(65).required(),
-    // price: yup.number().required(),
-    // area: yup.number().required(),
-    // address: yup.string().required(),
-    // rooms: yup.number().required()
+const EditPostSchema = yup.object().shape({
+    title: yup.string().max(65).required(),
+    price: yup.number().required(),
+    area: yup.number().required(),
+    address: yup.string().required(),
+    rooms: yup.number().required()
 //   website: yup.string().url()
 });
 
@@ -21,8 +21,6 @@ function EditPostForm(props) {
 
     const {onFormClose, postId} = props;
 
-    
-    console.log(postId);
     const [post, setPost] = useState();
 
     useEffect(() => {
@@ -40,7 +38,7 @@ function EditPostForm(props) {
     }, [postId]);
 
     const { register, handleSubmit, errors } = useForm({
-        resolver: yupResolver(CreatePostSchema)
+        resolver: yupResolver(EditPostSchema)
       });
 
     const [owner, setOwner] = useState();
@@ -52,7 +50,6 @@ function EditPostForm(props) {
     };
 
     function handleCloseForm() {
-        console.log("close form");
         if(onFormClose){
             onFormClose();
         }
@@ -60,14 +57,13 @@ function EditPostForm(props) {
 
     return (
         <div className="edit-post__container">
-            <h3 className="edit-post__title">Tạo bài viết mới</h3>
+            <h3 className="edit-post__title">Chỉnh sửa bài đăng</h3>
             <form method="dialog" className="edit-post-form" ref={register} onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label>Tiêu đề bài viết<sup>*</sup></label>
                     <textarea name="title" id="" cols="30" rows="2" placeholder="Tiêu đề" value={post&&post.title}  ref={register}></textarea>
                     {errors.title && <p>{errors.title.message}</p>}
                 </div>
-                <div className="form-group">
                 <div className="form-row">
                     <div className="form-group">
                         <label>Giá cả<sup>*</sup></label>
@@ -84,6 +80,7 @@ function EditPostForm(props) {
                         </div>
                     </div>
                 </div>
+                <div className="form-group">
                     <label>Địa chỉ<sup>*</sup></label>
                     <input type="text" name="address" id="" placeholder="Địa chỉ chi tiết" ref={register} />
                 </div>
