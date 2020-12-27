@@ -20,7 +20,6 @@ function Home() {
         }
 
   const [postList, setPostList] = useState([]);
-  const loginSuccess = true;
   const history = useHistory();
 
   useEffect(() => {

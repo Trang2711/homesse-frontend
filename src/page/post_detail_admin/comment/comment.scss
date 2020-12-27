@@ -1,0 +1,111 @@
+.comment__container{
+    width: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 0px 0px 7px rgba(9, 8, 8, 0.25);
+    padding-bottom: 50px;
+}
+.comment__people_other{
+    display: flex;
+    flex-direction: column;
+}
+.comment__detail{
+    width: 550px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 40px;
+    border: solid 2px red;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+.comment__title{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.underlined_comment{
+    width: 70px;
+    height: 3px;
+    background-color: #274ABB;
+    margin-left: 20px;
+}
+.comment__info{
+    display: flex;
+    flex-direction: row;
+}
+.comment__avatar{
+    width: 70px;
+    height: 70px;
+    border-radius: 37.5px;
+
+}
+.comment__info_name_date{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.comment__namepeople{
+    color: #274ABB;
+    font-weight: 600;
+}
+.comment__date{
+    font-size: 15px;
+    color: rgb(85, 85, 85);
+}
+.comment__review{
+    margin-left: 50px;
+    margin-top: 5px;
+}
+.reviewed_star{
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
+.comment__content{
+    margin-left: 95px;
+    margin-top: 10px;
+}
+.comment__image{
+    width: 160px;
+    height: 110px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.confirm__comment{
+    text-align: right;
+    margin-top: 20px;
+}
+.warning__cfcomment{
+    color: red;
+    margin-right: 10px;
+    font-size: 25px;
+    //vertical-align: center;
+}
+.btn__confirmComment{
+    vertical-align: super;
+    width: 130px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(173, 1, 1);
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+// .comment__add{
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 30px;
+// }
+// .review_comment_yourpost{
+//     display: flex;
+//     flex-direction: column;
+//     width: 490px;
+//     height: 310px;
+//     margin-left: 20px;
+//     margin-top: 40px;
+// }
+// .review_comment_yourpost__inner{
+//     display: flex;
+//     flex-direction: row;
+// }

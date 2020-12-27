@@ -12,6 +12,7 @@ function Post(props) {
         function handleClick() {
             if(onPostClick){
                 onPostClick(id);
+                console.log("hello");
             }
         }
 

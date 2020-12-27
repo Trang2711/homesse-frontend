@@ -6,7 +6,9 @@ import PersonalPage from './page/personal_page/personal';
 import AdminPage from './page/admin_page/admin_page';
 import NotFound from './components/not_found/not_found';
 import PostDetail from './page/posts_detail/post_detail';
-import OwnerPage from './page/owner_page/owner_page'
+import OwnerPage from './page/owner_page/owner_page';
+import PostDetailAdmin from './page/post_detail_admin/post_detail_admin';
+import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
 import './App.scss';
 
 // import Title from './components/posts_detail/title/title';
@@ -39,7 +41,7 @@ function App() {
         </Route>
         <Route path="/admin" component={AdminPage}>
         </Route>
-        <Route path="/posts/:id" component={PostDetail}>
+        <Route path="/posts/:id" component={PostDetailOwner}>
         </Route>
         <Router component={NotFound}></Router>
       </Switch>

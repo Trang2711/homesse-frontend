@@ -48,17 +48,17 @@
     flex: 12;
     margin-top: 50px;
 }
-#title__report__icon, #title__like__icon{
+#title__report__icon, #title__view__icon{
     font-size: 20px;
     color: rgb(163, 163, 163);
 }
-.title__like{
-    flex: 1;
+.title__view{
+    flex: 2;
 }
 .title__follow{
-    flex: 7;
+    flex: 6;
 }
-.title__savepost{
+.title__updatestate{
     flex: 2;
     height: 40px;
     border: none;
@@ -69,13 +69,7 @@
     font-weight: bold;
     margin-top: -10px;
 }
-.title__iconreport{
-    flex: 1;
-}
-.title__iconlike{
-    flex: 1;
-}
-#title__like, #title__follow{
+#title__view, #title__follow{
     margin: 0;
     font-weight: bold;
     color: gray;
