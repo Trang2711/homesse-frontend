@@ -88,12 +88,10 @@ ul {
     border-radius: 3px;
     font-size: 14px;
     box-shadow: 0 8px 16px -4px rgba(9, 30, 66, .25), 0 0 0 1px rgba(9, 30, 66, .08);
-    width: 180px;
-}
 
-.drop-down {
     position: absolute;
     top: 57px;
+    right: 0px;
     display: none;
 
     >a {
@@ -101,9 +99,18 @@ ul {
         text-decoration: none;
 
         >li {
-            padding: 0 20px;
+            padding: 12px 20px;
+            line-height: 23px;
         }
     }
+}
+
+.drop-down.user-drop {
+    width: 180px;
+}
+
+.drop-down.notify-drop {
+    width: 300px;
 }
 
 .drop {
@@ -207,23 +214,24 @@ ul {
     .drop-down {
         position: absolute;
         top: 0px;
-        left: -180px;
+        right: 300px;
         display: none;
         background-color: #212529;
 
         >a {
             color: white;
             text-decoration: none;
-    
+
             >li {
-                padding: 0 20px;
-            border-bottom: solid 2px #25292c;
+                padding: 12px 20px;
+                line-height: 23px;
+                border-bottom: solid 2px #25292c;
             }
         }
     }
 
     .drop-down>a:hover>li {
-        background-color:  #339af0;
+        background-color: #339af0;
         transition: .3s;
     }
 }

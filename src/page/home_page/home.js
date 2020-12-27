@@ -6,6 +6,7 @@ import Features from '../../components/features/features';
 import Post from '../../components/post/post_big/post_big';
 import AboutUs from '../../components/about_us/about_us';
 import Footer from '../../components/footer/footer';
+import Chat from '../../components/chat/chat';
 
 import React, { Component, useEffect, useState } from "react";
 import postApi from '../../api/postApi';
@@ -73,6 +74,7 @@ function Home() {
         </div>
         <AboutUs/>
         <Footer />
+        <Chat/>
       </div>
     </div>
     );

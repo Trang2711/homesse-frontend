@@ -1,6 +1,7 @@
 const initialUserState = {
     id: 123,
     name: "Trang Trịnh",
+    role: "RENTER"
 }
 
 const userReducer = (state = initialUserState, action) => {
