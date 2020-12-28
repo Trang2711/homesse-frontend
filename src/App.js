@@ -9,16 +9,8 @@ import PostDetail from './page/posts_detail/post_detail';
 import OwnerPage from './page/owner_page/owner_page';
 import PostDetailAdmin from './page/post_detail_admin/post_detail_admin';
 import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
+import SliderImage from './page/post_detail_admin/image/slider_image'
 import './App.scss';
-
-// import Title from './components/posts_detail/title/title';
-// import InfoAuthor from './components/posts_detail/info_author/info_author';
-// import DescriptionDetail from './components/posts_detail/description_detail/desc_detail';
-// import Facility from './components/posts_detail/facilities/facilities';
-// import DescriptionExtra from './components/posts_detail/description_extra/description_extra';
-// import Image from './components/posts_detail/image/image';
-// import Comment from './components/posts_detail/comment/comment';
-// import PostDetail from './components/posts_detail/post_detail'
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -41,7 +33,7 @@ function App() {
         </Route>
         <Route path="/admin" component={AdminPage}>
         </Route>
-        <Route path="/posts/:id" component={PostDetailOwner}>
+        <Route path="/posts/:id" component={PostDetailAdmin}>
         </Route>
         <Router component={NotFound}></Router>
       </Switch>
