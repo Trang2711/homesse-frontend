@@ -1,0 +1,112 @@
+.title__container{
+    width: 800px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    //margin-top: 50px;
+    //margin-left: 150px;
+}
+.title__header{
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+}
+.title__main{
+    font-size: 25px;
+    margin: 0;
+    flex: 3;
+}
+.title__money{
+    flex: 1;
+    color: #274ABB;
+}
+.money__post{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 9px;
+}
+.title__address{
+    margin-left: 5px;
+    position: relative;
+    display: flex;
+}
+.title__address__icon{
+    position: absolute;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    align-items: center;
+}
+.address__post{
+    display: inline-block;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 15px;
+    align-items: center;
+}
+.title__date{
+    margin-left: 5px;
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+}
+.title__date__icon{
+    align-items: center;
+    position: absolute;
+    top: 4px;
+    font-size: 15px;
+    color: rgb(87, 87, 87);
+}
+.date__post{
+    align-items: center;
+    display: inline-block;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 15px;
+}
+.edit__datepost{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 17px;
+    align-items: center;
+    position: relative;
+    color: blue;
+    cursor: pointer;
+}
+.edit__datepost .tooltip_editdate {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    visibility: hidden;
+    width: 120px;
+    background-color: #4d4c4c;
+    color: #fff;
+    text-align: center;
+    border-radius: 0 5px 5px 5px;
+    padding: 7px 0px;
+    top: 14px;
+    font-size: 13px;
+    position: absolute;
+    z-index: 1;
+  }
+
+.edit__datepost:hover .tooltip_editdate {
+    visibility: visible;
+}
+
+.title__footer{
+    position: relative;
+    margin-top: 50px;
+}
+.title__confirmpost{
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    width: 130px;
+    border: none;
+    border-radius: 20px;
+    background-color: #274ABB;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: -20px;
+}

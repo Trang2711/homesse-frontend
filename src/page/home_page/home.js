@@ -8,20 +8,19 @@ import AboutUs from '../../components/about_us/about_us';
 import Footer from '../../components/footer/footer';
 import Chat from '../../components/chat/chat';
 
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import postApi from '../../api/postApi';
 import { useHistory } from "react-router-dom";
 
 function Home() {
   const token = localStorage.getItem("token");
 
-        let LoggedIn = true;
-        if(token == null){
-            LoggedIn = false;
-        }
+  let LoggedIn = true;
+  if (token == null) {
+    LoggedIn = false;
+  }
 
   const [postList, setPostList] = useState([]);
-  const loginSuccess = true;
   const history = useHistory();
 
   useEffect(() => {
@@ -41,21 +40,20 @@ function Home() {
     history.push(`/posts/${postId}`);
   }
 
+  function handleRedirect() {
+    history.push('/search');
+  }
+
   return (
     <div className="home-page">
-      { (LoggedIn) ? (<MenuLogin/>) : (<Menu/>)}
+      { (LoggedIn) ? <MenuLogin /> : <Menu />}
       <div className="home-buffer"></div>
-      <BasicSearch />
+      <BasicSearch onRedirect={handleRedirect}/>
       <div className="home-page__container">
         <Features />
         <h1 className="web-header"><span className="blue">LATEST </span> POSTS </h1>
         <hr />
         <div className="posts__container">
-          {/* <Post title="Phòng trọ gần đại học Công Nghệ - ĐHQGHN"
-            image="/static/media/banner_2.f5a8d2b0.jpg"
-            intro="Đầy đủ tiện ích: điều hòa, nóng lạnh, máy giặt..."
-            money="3.500.000 đ"
-            area="25 m2" /> */}
           {
             postList.map((post) => {
               return (
@@ -66,18 +64,19 @@ function Home() {
                   intro={post.description}
                   money={post.price}
                   area={post.area}
+                  time={post.time_create}
                   onPostClick={handleClickPost}
                 />
               )
             })
           }
         </div>
-        <AboutUs/>
-        <Footer />
-        <Chat/>
+        <AboutUs />
+        {/* <Chat/> */}
       </div>
+      <Footer />
     </div>
-    );
+  );
 }
 
 export default Home;

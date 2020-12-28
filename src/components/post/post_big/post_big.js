@@ -3,26 +3,25 @@ import area_icon from '../../../images/area.svg';
 
 function Post(props) {
 
-        const { id, title, image, intro, money, area, onPostClick, onPostDelete, onPostEdit } = props;
+        const { id, title, image, intro, money, area, time, onPostClick, onPostDelete, onPostEdit } = props;
 
         var sectionStyle = {
             backgroundImage: `url(${image})`
         };
 
         function handleClick() {
-            if(onPostClick){
-                onPostClick(id);
-            }
+            if(!onPostClick) return;
+            onPostClick(id);
         }
 
         function handleDeletePost() {
             let deleted = window.confirm("Bạn chắc chắn muốn xóa bài viết?");
-            if (deleted) {
-                onPostDelete(id);
-            }
+            if (!deleted && !onPostDelete)  return;
+            onPostDelete(id);
         }
 
         function handleEditPost() {
+            if (!onPostEdit) return;
             onPostEdit(id);
         }
 
@@ -43,6 +42,10 @@ function Post(props) {
                         <div className="post__description--item">
                             <img className="post__description--icon" src={area_icon} alt=""></img>
                             <span>{area}</span>
+                        </div>
+                        <div className="post__description--item last">
+                            <i class="far fa-clock"></i>
+                            <span>{time}</span>
                         </div>
                     </div>
                 </div>

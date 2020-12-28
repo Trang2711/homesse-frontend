@@ -42,6 +42,9 @@
         margin-bottom: 9px;
     }
 }
+.post:hover {
+    cursor: pointer;
+}
 
 .post__description--item {
     display: inline-block;
@@ -55,4 +58,8 @@
     span {
         margin-left: 6px;
     }
+}
+
+.post__description--item.last {
+    margin-right: 0px;
 }

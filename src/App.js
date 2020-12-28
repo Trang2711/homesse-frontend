@@ -4,19 +4,10 @@ import RegisterPage from './page/register_page/register';
 import SearchPage from './page/search_page/search';
 import PersonalPage from './page/personal_page/personal';
 import AdminPage from './page/admin_page/admin_page';
-import NotFound from './components/not_found/not_found';
-import PostDetail from './page/posts_detail/post_detail';
-import OwnerPage from './page/owner_page/owner_page'
+import NotFound from './page/not_found/not_found';
+import OwnerPage from './page/owner_page/owner_page';
+import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
 import './App.scss';
-
-// import Title from './components/posts_detail/title/title';
-// import InfoAuthor from './components/posts_detail/info_author/info_author';
-// import DescriptionDetail from './components/posts_detail/description_detail/desc_detail';
-// import Facility from './components/posts_detail/facilities/facilities';
-// import DescriptionExtra from './components/posts_detail/description_extra/description_extra';
-// import Image from './components/posts_detail/image/image';
-// import Comment from './components/posts_detail/comment/comment';
-// import PostDetail from './components/posts_detail/post_detail'
 
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -39,9 +30,11 @@ function App() {
         </Route>
         <Route path="/admin" component={AdminPage}>
         </Route>
-        <Route path="/posts/:id" component={PostDetail}>
+        <Route path="/posts/:id" component={PostDetailOwner}>
         </Route>
-        <Router component={NotFound}></Router>
+        <Router path="*">
+          <NotFound/>
+        </Router>
       </Switch>
     </Router>
   );

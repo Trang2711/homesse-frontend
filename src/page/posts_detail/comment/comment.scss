@@ -5,6 +5,7 @@
     flex-direction: column;
     border-radius: 6px;
     box-shadow: 0px 0px 7px rgba(9, 8, 8, 0.25);
+    padding-bottom: 50px;
 }
 .comment__people_other{
     display: flex;
@@ -67,12 +68,7 @@
     border-radius: 5px;
     margin-top: 20px;
 }
-.review_star{
-    width: 25px;
-    height: 25px;
-    margin-right: 10px;
-    margin-top: 20px;
-}
+
 .comment__add{
     display: flex;
     flex-direction: column;
@@ -94,7 +90,12 @@
     margin-left: 20px;
     margin-top: 20px;
 }
-.btn__addimage{
+
+.add__image{
+    position: relative;
+}
+.btn__addimage, .input__addimage{
+    position: absolute;
     width: 130px;
     height: 35px;
     border-radius: 15px;
@@ -104,6 +105,15 @@
     font-size: 15px;
     margin-top: 10px;
     margin-left: 90px;
+    cursor: pointer;
+}
+.input__addimage{
+    opacity: 0;
+}
+
+.your_review{
+    display: flex;
+    flex-direction: row;  
 }
 #your_comment{
     border: gray solid 0.5px;
@@ -126,3 +136,19 @@ textarea::placeholder{
     color: gray;
 
 }
+// .review_star{
+//     //position: absolute;
+//     font-size: 25px;
+//     margin-right: 10px;
+//     margin-top: 20px;
+//     color: gray;
+// }
+// .review_star:hover{
+//     color: rgb(248, 232, 2);
+//     cursor: pointer;
+// }
+// .checkbStar{
+//     input[type='checkbox']{
+//         display: none;
+//     }
+// }

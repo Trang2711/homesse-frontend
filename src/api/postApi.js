@@ -14,6 +14,11 @@ const postApi = {
     getPosts: (params) => {
         const url = '/posts';
         return axiosClient.get(url, {params});
+    },
+    
+    createPost: (data) => {
+        const url = '/post/create_post';
+        return axiosClient.post(url, data);
     }
     
 }
