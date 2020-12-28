@@ -11,12 +11,12 @@
         text-align: right;
         color: rgba(0, 0, 0, 0.88);
 
-        .close-btn {
-            padding: 12px;
+        .icon-btn {
+            padding: 10px 10px 0px 5px;
         }
 
-        .close-btn:hover {
-            color: black;
+        .icon-btn:hover {
+            cursor: pointer;
         }
     }
 
@@ -42,6 +42,9 @@
         margin-bottom: 9px;
     }
 }
+.post:hover {
+    cursor: pointer;
+}
 
 .post__description--item {
     display: inline-block;
@@ -55,4 +58,8 @@
     span {
         margin-left: 6px;
     }
+}
+
+.post__description--item.last {
+    margin-right: 0px;
 }

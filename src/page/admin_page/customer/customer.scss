@@ -1,8 +1,14 @@
 .owner-table {
     min-width: 600px;
-    tr td:nth-child(3), tr td:nth-child(4){
-    // width: 100px;
-    text-align: center;
+
+    tr th:nth-child(2) {
+        width: 300px;
+    }
+
+    tr td:nth-child(3),
+    tr td:nth-child(4) {
+        width: 200px;
+        text-align: center;
     }
 }
 

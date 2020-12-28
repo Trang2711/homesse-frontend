@@ -1,5 +1,4 @@
 import './search.scss';
-import { Component } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -50,25 +49,26 @@ function AdvanceSearch() {
               <label htmlFor='heater'>Điều hòa</label>
             </div>
             <div className='input'>
-              <input type='checkbox' name='kitchen' id='kitchen' ref={register}/>
+              <input type='checkbox' name='kitchen' id='kitchen' ref={register} />
               <label htmlFor='kitchen'>Bếp</label>
             </div>
             <div className='input'>
-              <input type='checkbox' name='toilet' id='toilet' ref={register}/>
+              <input type='checkbox' name='toilet' id='toilet' ref={register} />
               <label htmlFor='toilet'>Vệ sinh khép kín</label>
             </div>
             <div className='input last-input'>
-              <input type='checkbox' name='stayWithOwner' id='stayWithOwner' ref={register}/>
+              <input type='checkbox' name='stayWithOwner' id='stayWithOwner' ref={register} />
               <label htmlFor='stayWithOwner'>Chung chủ</label>
             </div>
           </div>
           <div className='group-input'>
             <h2 className='group-input__title'>Khác</h2>
             <select name='type_room' ref={register}>
-              <option value='volvo'>Loại phòng</option>
-              <option value='saab'>Đơn</option>
-              <option value='fiat'>Đôi</option>
-              <option value='audi'>Audi</option>
+              <option className="abc" value="">Loại phòng</option>
+              <option value="apartment">Chung cư</option>
+              <option value="boarding-room">Phòng trọ</option>
+              <option value="homestay">Homestay</option>
+              <option value="house">Nhà nguyên căn</option>
             </select>
             <select name='price' ref={register}>
               <option value='volvo'>Giá cả</option>

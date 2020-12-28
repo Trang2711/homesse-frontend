@@ -1,10 +1,29 @@
 import './accept_post.scss';
+import { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import postApi from '../../../api/postApi';
+import { useSelector } from 'react-redux';
 
 import Post from '../../../components/post/post_big/post_big';
 
-function AcceptPost (props) {
-    const {posts} = props;
+function AcceptPost () {
+  const [posts, setPost] = useState([]);
+  const userId = useSelector(state => state.user.id);
+
+  useEffect(() => {
+    async function fetchPosts() {
+        try {
+            const params = { user_id: userId, status_review: 1 };
+            const res = await postApi.getPosts(params);
+
+            setPost(res);
+        } catch (error) {
+            console.log("Error when fetching userInfo: " + error);
+        }
+    }
+    fetchPosts(userId);
+}, []);
+
     const history = useHistory();
 
     function handleClickPost(postId) {

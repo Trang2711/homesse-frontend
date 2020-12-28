@@ -1,0 +1,22 @@
+.chat__container {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+.chat-bubble {
+    width: 70px;
+    height: 70px;
+    background-image: url('../../images/chat-icon.png');
+    background-size: cover;
+    position: relative;
+}
+
+.chat-box {
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+    border-radius: 8px;
+    width: 380px;
+    min-height: 500px;
+    background-color: rgb(189, 189, 189);
+}

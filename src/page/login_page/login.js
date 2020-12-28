@@ -3,7 +3,9 @@ import { Component } from 'react';
 import email from '../../images/email.png'
 import pass from '../../images/padlock.png'
 import warn from '../../images/exclamation-mark.png'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom';
+import axios from 'axios';
+import userApi from '../../api/userApi';
 
 class Login extends Component {
     constructor(props){
@@ -33,17 +35,21 @@ class Login extends Component {
             [name] : value
         });
     }
-    onHandleSubmit(event){
+    async onHandleSubmit(event){
         event.preventDefault();
         const validation = this.validationForm();
         if(validation){
             console.log(this.state);
-            if(this.state.email == "pthuc26@gmail.com" && this.state.password == "Thucnamsao123"){
+            const data = this.state;
+            const res = await userApi.signIn(data);
+            console.log(res);
+
+            if(res.message === "Đăng nhập thành công"){
                 localStorage.setItem("token", "dvnsjdvnsjvndj");
                 this.setState({
                     LoggedIn: true
                 })
-            }
+            } 
         }
     }
     validationForm(){
@@ -72,7 +78,7 @@ class Login extends Component {
 
     checkPassword(){
         const {password} = this.state;
-        const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        const regexPass = /^.{6,}$/;
         if(!regexPass.test(password)){
             document.getElementById("login__error").innerText = "Email hoặc mật khẩu không đúng!";
             this.setState({
@@ -108,7 +114,7 @@ class Login extends Component {
                                 onChange={ this.onHandleChange}
                                 value={this.state.email}
                             />
-                            <img src={email} className="icon-email"/>
+                            <img src={email} className="icon-email" alt=""/>
                             {
                                 this.state.warningEmail?
                                 <img src={warn} className="warning__login" alt=""/>
@@ -125,7 +131,7 @@ class Login extends Component {
                                 onChange={ this.onHandleChange}
                                 value={this.state.password}
                             />
-                            <img src={pass} className="icon-pass"/>
+                            <img src={pass} className="icon-pass" alt=""/>
                             {
                                 this.state.warningPassword?
                                 <img src={warn} className="warning__login" alt=""/>
@@ -137,7 +143,7 @@ class Login extends Component {
                             <p id="login__error"></p>
                         </div>
                         <div className="register">
-                            <a href="">Don't you have an account? Sign Up</a>
+                            <Link to="/register">Don't you have an account? Sign Up</Link>
                         </div>
                         <div className="login__btn">
                             <button type="submit" className="login__button">LOGIN</button>

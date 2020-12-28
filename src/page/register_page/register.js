@@ -231,7 +231,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningFirstname?
-                                <img src={warn} className="register__warning" id="warning-fisrtname"/>
+                                <img src={warn} className="register__warning" id="warning-fisrtname" alt=""/>
                                 :null
                             }  
                             <br />
@@ -247,7 +247,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningLastName?
-                                <img src={warn} className="register__warning" id="warning-lastname"/>
+                                <img src={warn} className="register__warning" id="warning-lastname" alt=""/>
                                 :null
                             }
                             <br />
@@ -263,7 +263,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningEmail?
-                                <img src={warn} className="register__warning" id="warning-email"/>
+                                <img src={warn} className="register__warning" id="warning-email" alt=""/>
                                 :null
                             }                           
                         </div>
@@ -278,7 +278,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningphone_number?
-                                <img src={warn} className="register__warning" id="warning-phone_number"/>
+                                <img src={warn} className="register__warning" id="warning-phone_number" alt=""/>
                                 :null
                             }
                             <br/>
@@ -295,7 +295,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningAddress?
-                                <img src={warn} className="register__warning" id="warning-address"/>
+                                <img src={warn} className="register__warning" id="warning-address" alt=""/>
                                 :null
                             }                               
                         </div>
@@ -310,7 +310,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningPassword?
-                                <img src={warn} className="register__warning" id="warning-password"/>
+                                <img src={warn} className="register__warning" id="warning-password" alt=""/>
                                 :null
                             } 
                             <br />
@@ -327,7 +327,7 @@ class RegisterPage extends Component {
                             />
                             {
                                 this.state.warningCfPassword?
-                                <img src={warn} className="register__warning" id="warning-cfpassword"/>
+                                <img src={warn} className="register__warning" id="warning-cfpassword" alt=""/>
                                 :null
                             }
                             <br />
@@ -367,7 +367,7 @@ class RegisterPage extends Component {
                                     />
                                     {
                                         this.state.warningIdcard?
-                                        <img src={warn} className="register__warning" id="warning-idcard"/>
+                                        <img src={warn} className="register__warning" id="warning-idcard" alt=""/>
                                         :null
                                     }
                                 </div>

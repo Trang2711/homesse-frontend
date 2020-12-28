@@ -4,10 +4,8 @@ import RegisterPage from './page/register_page/register';
 import SearchPage from './page/search_page/search';
 import PersonalPage from './page/personal_page/personal';
 import AdminPage from './page/admin_page/admin_page';
-import NotFound from './components/not_found/not_found';
-import PostDetail from './page/posts_detail/post_detail';
+import NotFound from './page/not_found/not_found';
 import OwnerPage from './page/owner_page/owner_page';
-import PostDetailAdmin from './page/post_detail_admin/post_detail_admin';
 import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
 import SliderImage from './page/post_detail_admin/image/slider_image'
 import './App.scss';
@@ -35,7 +33,9 @@ function App() {
         </Route>
         <Route path="/posts/:id" component={PostDetailAdmin}>
         </Route>
-        <Router component={NotFound}></Router>
+        <Router path="*">
+          <NotFound/>
+        </Router>
       </Switch>
     </Router>
   );
