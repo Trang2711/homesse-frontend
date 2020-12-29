@@ -1,0 +1,23 @@
+.img_comment {
+    //width: 150px;
+    height: 150px;
+    border: red solid 2px;
+}
+
+.image_container {
+    position: relative;
+    width: max-content;
+    margin-right: 10px;
+}
+
+.multi-preview {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.remove__image {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

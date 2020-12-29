@@ -8,6 +8,7 @@ import StarRating from "../../../components/start_rating/star_rating";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
+// import MultipleImageUploadComponent from '../upload_image/image_upload'
 
 const SubmitComment = yup.object().shape({
   // comment: yup.string().required(),
@@ -52,7 +53,7 @@ function Comment() {
               finibus dui sapien eu dolor. Integer tincidunt suscipit erat, nec
               laoreet ipsum vestibulum sed.
             </p>
-            <img src={imageRoom} className="comment__image" alt="" />
+            {/* <img src={imageRoom} className="comment__image" alt="" /> */}
           </div>
         </div>
       </div>
@@ -70,17 +71,9 @@ function Comment() {
               <p>Đánh giá của bạn cho căn phòng này</p>
               <StarRating register={register} />
             </div>
-            <div className="add__image">
-              {/* <button className="btn__addimage">Thêm hình ảnh</button> */}
-              {/* <input className="input__addimage" name="images" type='file' multiple accept="image/gif, image/jpeg, image/png" placeholder="Thêm hình ảnh"/> */}
-              <input
-                type="file"
-                name="images"
-                multiple
-                accept="image/gif, image/jpeg, image/png"
-                ref={register}
-              />
-            </div>
+            {/* <div className="add__image">
+              <MultipleImageUploadComponent/>
+            </div> */}
           </div>
 
           <textarea

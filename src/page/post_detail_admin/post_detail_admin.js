@@ -8,9 +8,9 @@ import InfoAuthor from './info_author/info_author';
 import DescriptionDetail from './description_detail/desc_detail';
 import Facility from './facilities/facilities';
 import DescriptionExtra from './description_extra/description_extra';
-import Image from './image/image';
 import Comment from './comment/comment';
 import Footer from '../../components/footer/footer';
+import SliderImage from './image/slider_image'
 
 function PostDetail(){
     return(
@@ -20,7 +20,7 @@ function PostDetail(){
             <div className="postdetail__container">
                 <div className="postdetail__left">
                     <div className="postdetail__component"><Title/></div>
-                    <div className="postdetail__component"><Image/></div>
+                    <div className="postdetail__component"><SliderImage/></div>
                     <div className="postdetail__component"><DescriptionDetail/></div>
                     <div className="postdetail__component"><Facility/></div>
                     <div className="postdetail__component"><DescriptionExtra/></div>

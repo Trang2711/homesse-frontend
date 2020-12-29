@@ -6,7 +6,7 @@ import warn from '../../images/exclamation-mark.png'
 import { Redirect, Link } from 'react-router-dom';
 import userApi from '../../api/userApi';
 import {initUser} from '../../action/user_action';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import store from "../../store";
 class Login extends Component {
     constructor(props){
@@ -28,6 +28,8 @@ class Login extends Component {
         this.onHandleChange = this.onHandleChange.bind(this);
         this.onHandleSubmit = this.onHandleSubmit.bind(this);
     }
+
+
     onHandleChange(event){
         var target = event.target;
         var name = target.name;
@@ -51,9 +53,6 @@ class Login extends Component {
                     LoggedIn: true
                 });
                 let tmp = initUser(res);
-                // userReducer(null, tmp);
-                const dispatch = useDispatch();
-                dispatch(tmp);
                 console.log(store.state);
                 console.log(localStorage.getItem("token"));
             } 

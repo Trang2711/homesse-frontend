@@ -1,4 +1,4 @@
-.comment__container{
+.comment__container {
     width: 800px;
     height: auto;
     display: flex;
@@ -7,11 +7,13 @@
     box-shadow: 0px 0px 7px rgba(9, 8, 8, 0.25);
     padding-bottom: 50px;
 }
-.comment__people_other{
+
+.comment__people_other {
     display: flex;
     flex-direction: column;
 }
-.comment__detail{
+
+.comment__detail__confirmyet {
     width: 550px;
     height: auto;
     margin-left: 20px;
@@ -20,68 +22,90 @@
     border-radius: 5px;
     padding-bottom: 30px;
 }
-.comment__title{
+
+.comment__detail_confirmed {
+    width: 550px;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+
+.comment__title {
     margin-left: 20px;
     margin-top: 20px;
 }
-.underlined_comment{
+
+.underlined_comment {
     width: 70px;
     height: 3px;
     background-color: #274ABB;
     margin-left: 20px;
 }
-.comment__info{
+
+.comment__info {
     display: flex;
     flex-direction: row;
 }
-.comment__avatar{
+
+.comment__avatar {
     width: 70px;
     height: 70px;
     border-radius: 37.5px;
-
 }
-.comment__info_name_date{
+
+.comment__info_name_date {
     margin-left: 20px;
     margin-top: 5px;
 }
-.comment__namepeople{
+
+.comment__namepeople {
     color: #274ABB;
     font-weight: 600;
 }
-.comment__date{
+
+.comment__date {
     font-size: 15px;
     color: rgb(85, 85, 85);
 }
-.comment__review{
+
+.comment__review {
     margin-left: 50px;
     margin-top: 5px;
 }
-.reviewed_star{
+
+.reviewed_star {
     width: 10px;
     height: 10px;
     margin-left: 5px;
 }
-.comment__content{
+
+.comment__content {
     margin-left: 95px;
     margin-top: 10px;
 }
-.comment__image{
+
+.comment__image {
     width: 160px;
     height: 110px;
     border-radius: 5px;
     margin-top: 20px;
 }
-.confirm__comment{
+
+.confirm__comment {
     text-align: right;
     margin-top: 20px;
 }
-.warning__cfcomment{
+
+.warning__cfcomment {
     color: red;
     margin-right: 10px;
     font-size: 25px;
     //vertical-align: center;
 }
-.btn__confirmComment{
+
+.btn__confirmComment {
     vertical-align: super;
     width: 130px;
     height: 40px;

@@ -34,7 +34,7 @@ function Comment(){
             <div className="comment__people_other">
                 <h3 className="comment__title">3 Bình luận</h3>
                 <div className="underlined_comment"></div>
-                <div className="comment__detail">
+                <div className="comment__detail_confirmed">
                     <div className="comment__info">
                         <img src={avatarComment} className="comment__avatar" alt=""/>
                         <div className="comment__info_name_date">
@@ -54,7 +54,28 @@ function Comment(){
                             in finibus dui sapien eu dolor. 
                             Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.
                         </p>
-                        <img src={imageRoom} className="comment__image" alt=""/>
+                    </div>
+                </div>
+                <div className="comment__detail__confirmyet">
+                    <div className="comment__info">
+                        <img src={avatarComment} className="comment__avatar" alt=""/>
+                        <div className="comment__info_name_date">
+                            <p className="comment__namepeople">Lan Nguyễn</p>
+                            <p className="comment__date">13/12/2020</p>
+                        </div>
+                        <div className="comment__review">
+                            <img src={starReviewed} className="reviewed_star" alt=""/>
+                            <img src={starReviewed} className="reviewed_star" alt=""/>
+                            <img src={starReviewed} className="reviewed_star" alt=""/>
+                            <img src={starReviewed} className="reviewed_star" alt=""/>
+                            <img src={starReviewed} className="reviewed_star" alt=""/>
+                        </div>
+                    </div>
+                    <div className="comment__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam, quam congue dictum luctus, lacus magna congue ante, 
+                            in finibus dui sapien eu dolor. 
+                            Integer tincidunt suscipit erat, nec laoreet ipsum vestibulum sed.
+                        </p>
                     </div>
                     <div className="confirm__comment">
                         <i className="fas fa-exclamation-circle warning__cfcomment"></i>
