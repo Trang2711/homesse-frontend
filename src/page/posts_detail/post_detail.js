@@ -1,7 +1,7 @@
 import './post_detail.scss';
-import React from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import Menu from '../../components/navigation/Menu';
 import MenuLogin from '../../components/navigation/menu_login'
 import Title from './title/title';
 import InfoAuthor from './info_author/info_author';
@@ -13,9 +13,14 @@ import Comment from './comment/comment';
 import Footer from '../../components/footer/footer';
 
 function PostDetail(){
+    let { id } = useParams();
+    console.log(id);
+    useEffect(() => {
+        
+    }, [])
     return(
         <div className="postdetail__page">
-            <MenuLogin userName="Thảo Vũ" />
+            <MenuLogin/>
             <div className="postdetail-buffer"></div>
             <div className="postdetail__container">
                 <div className="postdetail__left">

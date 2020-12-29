@@ -22,16 +22,16 @@ function OwnerPage() {
     const [info, setInfo] = useState([]);
 
     useEffect(() => {
-        async function fetchInfo(id) {
+        async function fetchInfo() {
             try {
-                const res = await userApi.getUser(id);
-                // console.log(res);
-                setInfo(res);
+                const res = await userApi.getUser(userId);
+                console.log(res);
+                setInfo(res[0]);
             } catch (error) {
                 console.log("Error when fetching userInfo: " + error);
             }
         }
-        fetchInfo(userId);
+        fetchInfo();
     }, []);
 
     function handleSubmitCreatePost(form) {

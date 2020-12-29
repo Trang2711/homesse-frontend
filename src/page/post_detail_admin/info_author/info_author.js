@@ -5,7 +5,8 @@ import mail from '../../../images/email.png';
 import avatar from '../../../images/avatar1.jpg'
 
 
-function InfoAuthor(){
+function InfoAuthor(props){
+    const data = props.data;
     return(
         <div className="info__author__container">
             <div className="info__author__inner">
