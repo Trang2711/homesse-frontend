@@ -9,11 +9,12 @@ const userApi = {
     signIn: (data) => {
         const url = 'auth/login';
         return axiosClient.post(url, data);
-    }
-    // getUser: (id) => {
-    //     const url = `/users/${id}`;
-    //     return axiosClient.get(url);
-    // },
+    },
+    
+    createAccount: (dataForm) => {
+        const url = 'auth/signup';
+        return axiosClient.post(url, dataForm);
+    },
     
 }
 

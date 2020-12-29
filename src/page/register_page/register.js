@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import './register.scss';
 import warn from '../../images/exclamation-mark.png'
+import { Redirect } from 'react-router-dom';
+import userApi from '../../api/userApi';
 
 class RegisterPage extends Component {
     constructor(props){
@@ -12,15 +14,16 @@ class RegisterPage extends Component {
             phone_number : '',
             address : '',
             password : '',
-            cfpassword : '',
+            repassword : '',
             cmnd : '',
             role: 'renter',
+            validationOk : false,
             warningFirstname: false,
             warningLastName: false,
             warningphone_number: false,
             warningEmail: false,
             warningPassword: false,
-            warningCfPassword: false,
+            warningrepassword: false,
             warningIdcard: false,
             warningAddress: false
         };
@@ -36,11 +39,15 @@ class RegisterPage extends Component {
         });
     }
 
-    onHandleSubmit(event){
+    async onHandleSubmit(event){
         event.preventDefault();
-        const validation = this.validationForm();
-        if(validation){
+        if(this.validationForm()){
             console.log(this.state);
+            const res = await userApi.createAccount(this.state);
+            console.log(res);
+            this.setState({
+                validationOk: true
+            })
         }
     }
 
@@ -52,7 +59,7 @@ class RegisterPage extends Component {
         if(this.checkphone_number() === false) return false;
         if(this.checkAddress() === false) return false;
         if(this.checkPassword() === false) return false;
-        if(this.checkCfPassword() === false) return false;
+        if(this.checkrepassword() === false) return false;
         if(this.checkrole() === true){
             if(this.checkIdCard() === false) return false;
         }
@@ -142,8 +149,8 @@ class RegisterPage extends Component {
     //kiểm tra thẻ cmnd
     checkIdCard(){
         const {cmnd} = this.state;
-        const regexIdcard = /^[0-9]{9}$/;
-        if (!regexIdcard.test(cmnd) && cmnd.length !== 9) {
+        const regexIdcard = /^[0-9]{12}$/;
+        if (!regexIdcard.test(cmnd) && cmnd.length !== 12) {
             this.setState({
                 warningIdcard: true
             })
@@ -161,7 +168,7 @@ class RegisterPage extends Component {
         const {phone_number} = this.state;
         const regexphone_number = /^[0-9]{10}$/;
         if(phone_number.length !== 10 && !regexphone_number.test(phone_number)){
-            document.getElementById("register__phone_numberError").innerText = "Số điện thoại phải đúng 10 số";
+            document.getElementById("register__phone_numberError").innerText = "Số điện thoại 10 số";
             this.setState({
                 warningphone_number: true
             })
@@ -178,9 +185,9 @@ class RegisterPage extends Component {
     //kiểm tra mk
     checkPassword(){
         const {password} = this.state;
-        const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        const regexPass = /^.{6,}$/;
         if(!regexPass.test(password)){
-            document.getElementById("register__passError").innerText = "Mật khẩu phải hơn 8 ký tự, có chữ hoa, chữ thường, chữ số!";
+            document.getElementById("register__passError").innerText = "Mật khẩu dài hơn 6 ký tự!";
             this.setState({
                 warningPassword: true
             })
@@ -195,23 +202,24 @@ class RegisterPage extends Component {
     }
 
     //kiểm tra cf mk
-    checkCfPassword(){
-        const {password, cfpassword} = this.state;
-        if(password !== cfpassword){
+    checkrepassword(){
+        const {password, repassword} = this.state;
+        if(password !== repassword){
             document.getElementById("register__cfpassError").innerText = "Mật khẩu không trùng khớp!";
             this.setState({
-                warningCfPassword: true
+                warningrepassword: true
             })
             return false;
         }else{
             document.getElementById("register__cfpassError").innerText = "";
             this.setState({
-                warningCfPassword: false
+                warningrepassword: false
             })
             return true;
         }
     }
     render() {
+        if(this.state.validationOk) return <Redirect to="/login"/>
         return(
             <div className="register__container">
                 <div className="register__inner">
@@ -321,13 +329,13 @@ class RegisterPage extends Component {
                             <input 
                                 type="password" 
                                 className="required" 
-                                name="cfpassword"
+                                name="repassword"
                                 onChange={ this.onHandleChange}
-                                value={this.state.cfpassword}
+                                value={this.state.repassword}
                             />
                             {
-                                this.state.warningCfPassword?
-                                <img src={warn} className="register__warning" id="warning-cfpassword" alt=""/>
+                                this.state.warningrepassword?
+                                <img src={warn} className="register__warning" id="warning-repassword" alt=""/>
                                 :null
                             }
                             <br />

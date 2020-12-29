@@ -25,7 +25,10 @@
         color: black;
         border: solid 1.9px black;
         margin-bottom: 35px;
+        box-sizing: border-box;
     }
+
+    
 
     .input {
         margin-bottom: 15px;
@@ -72,4 +75,9 @@
     background: #238FAF;
     border: none;
     letter-spacing: 1.2px;
+}
+.lable-connect {
+    font-size: 1rem;
+    font-weight: 400px;
+    margin-left: 20px;
 }
