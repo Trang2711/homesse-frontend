@@ -72,7 +72,7 @@ function Home() {
           }
         </div>
         <AboutUs />
-        {/* <Chat/> */}
+        <Chat/>
       </div>
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './register.scss';
 import warn from '../../images/exclamation-mark.png'
+import { Redirect } from 'react-router-dom';
 
 class RegisterPage extends Component {
     constructor(props){
@@ -15,6 +16,7 @@ class RegisterPage extends Component {
             cfpassword : '',
             cmnd : '',
             role: 'renter',
+            validationOk: false,
             warningFirstname: false,
             warningLastName: false,
             warningphone_number: false,
@@ -35,12 +37,15 @@ class RegisterPage extends Component {
             [name] : value
         });
     }
-
+    
     onHandleSubmit(event){
         event.preventDefault();
         const validation = this.validationForm();
         if(validation){
             console.log(this.state);
+            this.setState({
+                validationOk: true
+            })
         }
     }
 
@@ -212,6 +217,9 @@ class RegisterPage extends Component {
         }
     }
     render() {
+        if(this.state.validationOk){
+            return <Redirect to="/login"/>
+        }
         return(
             <div className="register__container">
                 <div className="register__inner">
