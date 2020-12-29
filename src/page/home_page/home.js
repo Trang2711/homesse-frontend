@@ -49,7 +49,7 @@ function Home() {
     <div className="home-page">
       { (LoggedIn) ? <MenuLogin /> : <Menu />}
       <div className="home-buffer"></div>
-      {/* <BasicSearch onRedirect={handleRedirect} /> */}
+      <BasicSearch onRedirect={handleRedirect} />
       <BasicSearch/>
       <div className="home-page__container">
         <Features />

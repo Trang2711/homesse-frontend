@@ -1,5 +1,5 @@
 import './post_detail.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import MenuLogin from '../../components/navigation/menu_login'
@@ -11,32 +11,42 @@ import DescriptionExtra from './description_extra/description_extra';
 import SliderImage from './image/slider_image';
 import Comment from './comment/comment';
 import Footer from '../../components/footer/footer';
+import postApi from '../../api/postApi';
 
 function PostDetail(){
-    let { id } = useParams();
+    const { id } = useParams();
+    const [info, setInfo] = useState(null);
     console.log(id);
+
     useEffect(() => {
-        
-    }, [])
-    return(
+        async function fetchPostDetail() {
+            const res = await postApi.getPost(id);
+            setInfo(res[0]);
+            console.log(res);
+        }
+
+        fetchPostDetail();
+    }, []);
+
+    return (
         <div className="postdetail__page">
             <MenuLogin/>
             <div className="postdetail-buffer"></div>
             <div className="postdetail__container">
                 <div className="postdetail__left">
-                    <div className="postdetail__component"><Title/></div>
-                    <div className="postdetail__component"><SliderImage/></div>
-                    <div className="postdetail__component"><DescriptionDetail/></div>
-                    <div className="postdetail__component"><Facility/></div>
-                    <div className="postdetail__component"><DescriptionExtra/></div>
-                    <div className="postdetail__component"><Comment/></div>
+                    <div className="postdetail__component"><Title data={info} /></div>
+                    <div className="postdetail__component"><SliderImage data={info} /></div>
+                    <div className="postdetail__component"><DescriptionDetail data={info} /></div>
+                    <div className="postdetail__component"><Facility data={info} /></div>
+                    <div className="postdetail__component"><DescriptionExtra data={info} /></div>
+                    <div className="postdetail__component"><Comment data={info} /></div>
                 </div>
                 <div className="postdetail__right">
-                    <InfoAuthor/>
+                    <InfoAuthor data={info}/>
                 </div>
-                
+
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

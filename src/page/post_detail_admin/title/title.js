@@ -20,19 +20,19 @@ function Title(props){
         
         <div className="title__container">
             <div className="title__header">
-                <h1 className="title__main">{data.post.title}</h1>
+                <h1 className="title__main">{data&&data.post.title}</h1>
                 <div className="title__money">
-                    <h2 className="money__post"><span>$ </span>3.500.000<span> đ/tháng</span></h2>
+                    <h2 className="money__post"><span>$ </span>{data && data.boarding.price}<span> đ/tháng</span></h2>
                 </div>
             </div>
             
             <div className="title__address">
                 <img src={located} className="title__address__icon" alt=""/>
-                <p className="address__post">134, Xuân Thủy, Cầu Giấy, Hà Nội</p>
+                <p className="address__post">{data && data.boarding.address}</p>
             </div>
             <div className="title__date">
                 <i class="far fa-clock title__date__icon"></i>
-                <p className="date__post">20/12/2020-22/07/2021</p>
+                <p className="date__post">{data && data.post.created_at}</p>
                 <i class="fas fa-edit edit__datepost">
                     <span className="tooltip_editdate">Gia hạn bài viết</span>
                 </i>

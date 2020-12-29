@@ -9,6 +9,7 @@ import OwnerPage from './page/owner_page/owner_page';
 import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
 import SliderImage from './page/post_detail_admin/image/slider_image';
 import PostDetailAdmin from './page/post_detail_admin/post_detail_admin';
+import PostDetail from './page/posts_detail/post_detail';
 import './App.scss';
 
 import React from "react";
@@ -32,7 +33,7 @@ function App() {
         </Route>
         <Route path="/admin" component={AdminPage}>
         </Route>
-        <Route path="/posts/:id" component={PostDetailAdmin}>
+        <Route path="/posts/:id" component={PostDetailOwner}>
         </Route>
         <Router path="*">
           <NotFound />

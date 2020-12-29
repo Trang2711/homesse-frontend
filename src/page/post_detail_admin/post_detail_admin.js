@@ -44,7 +44,7 @@ function PostDetail() {
                     <div className="postdetail__component"><Comment data={info} /></div>
                 </div>
                 <div className="postdetail__right">
-                    <InfoAuthor />
+                    <InfoAuthor data={info}/>
                 </div>
 
             </div>
