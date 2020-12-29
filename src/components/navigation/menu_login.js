@@ -3,16 +3,28 @@ import logo from '../../images/logo_0.png';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import userApi from '../../api/userApi';
-// import notificationApi from '../../api/notificationApi';
+import notificationApi from '../../api/notificationApi';
+import Notification from '../../components/notification/notification';
 // import store from '../../store';
 // import { useSelector } from 'react-redux';
 
 function MenuLogin() {
-    
+    const userId = localStorage.getItem("id");
     const userName = localStorage.getItem("lastName");
     const role = localStorage.getItem("role");
 
     const [closeMenu, setCloseMenu] = useState(true);
+    const [notifications, setNotifications] = useState([]);
+
+    useEffect(() => {
+        async function fetchNotifications(){
+            const res = await notificationApi.getNotification(userId);
+            console.log(res);
+            setNotifications(res);
+        }
+
+        fetchNotifications();
+    }, [notifications]);
 
     function handleClick() {
         setCloseMenu(!closeMenu);
@@ -34,6 +46,10 @@ function MenuLogin() {
             return'/personal';
         }
     }
+
+    function handleClickNotification(postId, userId) {
+        console.log(postId + " " + userId);
+    }
     return (
         <div className="navbar">
             <div className="navbar__top"></div>
@@ -48,10 +64,15 @@ function MenuLogin() {
                         <i className="fal fa-bell"></i>
                         <ul className="drop-down notify-drop">
                             {
-                                // notifications.map(post => (<Link to={"/posts/" + post.id}><li>Bài đăng "<b>{post.title}</b>"{post.status_review === "0" ? "dã được duyệt" : "đã bị từ chối duyệt"} </li></Link>))
+                                notifications.map(notification => (
+                                    <Notification 
+                                        userId={notification.userId} 
+                                        postId={notification.postId} 
+                                        title={notification.title}
+                                        onClick={()=>handleClickNotification(notification.userId, notification.postId)}
+                                        />
+                                    ))
                             }
-                            <Link to=""><li>Bài đăng "<b>Nhà trọ giá rẻ full đôg gần đại học Công Nghệ...</b>" đã được duyệt</li></Link>
-                            <Link to=""><li>Bài đăng "<b>Nhà trọ giá rẻ full đôg gần đại học Công Nghệ...</b>" đã bị từ chối duyệt</li></Link>
                         </ul>
                     </li>
                     <li className="drop">
