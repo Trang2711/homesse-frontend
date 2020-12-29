@@ -4,3 +4,10 @@ export const setUser = (newInfo) => {
         payload: newInfo
     }
 }
+
+export const initUser = (newUser) => {
+    return {
+        type: 'INIT_USER',
+        payload: newUser,
+    }
+}

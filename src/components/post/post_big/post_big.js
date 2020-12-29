@@ -4,6 +4,7 @@ import area_icon from '../../../images/area.svg';
 function Post(props) {
 
         const { id, title, image, intro, money, area, time, onPostClick, onPostDelete, onPostEdit } = props;
+        console.log(props.time);
 
         var sectionStyle = {
             backgroundImage: `url(${image})`

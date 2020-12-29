@@ -10,6 +10,11 @@ function MenuLogin() {
     const user = useSelector(state => state.user);
     const [closeMenu, setCloseMenu] = useState(true);
     const [notifications, setnotifications] = useState([]);
+    if(user){
+        console.log(user.lastName);
+    } else {
+        console.log("user null");
+    }
 
     useEffect(() => {
         async function fetchNotification(userId) {
@@ -51,9 +56,10 @@ function MenuLogin() {
                     <li className="drop">
                         <i className="fal fa-user"></i>
                         <span>
-                            {user.name}</span>
+                            {user&&user.lastName}
+                        </span>
                         <ul className="drop-down user-drop">
-                            <Link to={(user.role === 'OWNER' ? '/owner' : '/personal')}><li>Trang cá nhân</li></Link>
+                            <Link to={(user&&user.role === 'OWNER') ? '/owner' : '/personal'}><li>Trang cá nhân</li></Link>
                             <Link to="/" onClick={logOut}><li>Đăng xuất</li></Link>
                         </ul>
                     </li>

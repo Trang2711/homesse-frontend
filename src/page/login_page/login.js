@@ -4,9 +4,10 @@ import email from '../../images/email.png'
 import pass from '../../images/padlock.png'
 import warn from '../../images/exclamation-mark.png'
 import { Redirect, Link } from 'react-router-dom';
-import axios from 'axios';
 import userApi from '../../api/userApi';
-
+import {initUser} from '../../action/user_action';
+import {useDispatch} from 'react-redux';
+import store from "../../store";
 class Login extends Component {
     constructor(props){
         super(props);
@@ -45,10 +46,16 @@ class Login extends Component {
             console.log(res);
 
             if(res.message === "Đăng nhập thành công"){
-                localStorage.setItem("token", "dvnsjdvnsjvndj");
+                localStorage.setItem("token", res.token_type + res.access_token);
                 this.setState({
                     LoggedIn: true
-                })
+                });
+                let tmp = initUser(res);
+                // userReducer(null, tmp);
+                const dispatch = useDispatch();
+                dispatch(tmp);
+                console.log(store.state);
+                console.log(localStorage.getItem("token"));
             } 
         }
     }
