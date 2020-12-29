@@ -2,17 +2,17 @@ import axiosClient from "./axiosClient";
 
 const postApi = {
     getLatestPost: (params) => {
-        const url = '/posts';
-        return axiosClient.get(url, {params});
+        const url = '/post/recent_posts';
+        return axiosClient.get(url);
     },
 
     getById: (id) => {
-        const url = `/posts/${id}`;
+        const url = `/post/${id}`;
         return axiosClient.get(url);
     },
 
     getPosts: (params) => {
-        const url = '/posts';
+        const url = '/post';
         return axiosClient.get(url, {params});
     },
     

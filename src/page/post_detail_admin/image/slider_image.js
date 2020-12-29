@@ -10,7 +10,7 @@ import btnRight from "../../../images/right-arrow.png";
 import imageRoom from "../../../images/background_0.jpg";
 
 function Slider() {
-  const slides = [background_image, background1, background2, background_image, background1];
+  const slides = [background_image, background1, background2];
   const [activeSlide, setActiveSlide] = useState(0);
 
   const prevSlide = () => {

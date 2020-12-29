@@ -3,32 +3,30 @@ import avatar__user from '../../images/avatar1.jpg';
 import { useState } from 'react';
 
 function Chat() {
-  const [message, setMessage] = useState("");
   const [msg, setmsg] = useState("");
+  const [valueInput, setvalueInput] = useState("");
 
-  function submitMessage(){
-    setMessage();
+  function handleKeyPress(event) {
+    console.log(event.key);
+    setvalueInput(event.target.value);
+    // if(event.key === 'Enter'){
+
+    // }
   }
-  function onHandleChange(event) {
-    var target = event.target;
-    var name = target.name;
-    var value = target.value;
-
-    if (name === 'message') {
-        setmsg(value);
-    }
-}
-  
+  function handleSubmitChat(e) {
+    e.preventDefault();
+    console.log(valueInput);
+  }
   return (
     <div className="chat__container">
       <div className="chat-bubble"></div>
       <div className="chat-box">
         <div className="chat-box__header">
           <div>
-            <div 
-              className="avatar_chat" 
+            <div
+              className="avatar_chat"
               style={{
-                backgroundImage: "url(" +  avatar__user + ")", 
+                backgroundImage: "url(" + avatar__user + ")",
                 height: "40px",
                 width: "40px",
                 borderRadius: "20px",
@@ -42,10 +40,10 @@ function Chat() {
         </div>
         <div className="chat-box__content__message">
           <div className="mess-group left">
-            <div 
+            <div
               className="mess-group__avatar"
               style={{
-                backgroundImage: "url(" +  avatar__user + ")", 
+                backgroundImage: "url(" + avatar__user + ")",
                 height: "40px",
                 width: "40px",
                 borderRadius: "20px",
@@ -57,10 +55,10 @@ function Chat() {
           </div>
 
           <div className="mess-group right">
-            <div 
+            <div
               className="mess-group__avatar"
               style={{
-                backgroundImage: "url(" +  avatar__user + ")", 
+                backgroundImage: "url(" + avatar__user + ")",
                 height: "40px",
                 width: "40px",
                 borderRadius: "20px",
@@ -68,12 +66,14 @@ function Chat() {
                 backgroundSize: "cover",
                 backgroundPosition: "center, center"
               }}></div>
-            <div className="mess-group__content">{ message }</div>
+            <div className="mess-group__content">{msg}</div>
           </div>
         </div>
         <div className="chat-box__footer">
-          <input type="text" name="message" value={message} className="my__message" placeholder="Viết tin nhắn" onChange={onHandleChange}/>
-          <i className="fas fa-paper-plane send__message" onClick={submitMessage}></i>
+          <form action="" className="chat-form" onSubmit={handleSubmitChat}>
+            <input type="text" name="message" value={valueInput} className="my__message" placeholder="Viết tin nhắn" onChange={handleKeyPress} />
+            <i className="fas fa-paper-plane send__message"></i>
+          </form>
         </div>
       </div>
     </div>

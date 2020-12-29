@@ -7,9 +7,8 @@ import AdminPage from './page/admin_page/admin_page';
 import NotFound from './page/not_found/not_found';
 import OwnerPage from './page/owner_page/owner_page';
 import PostDetailOwner from './page/post_detail_owner/post_detail_owner';
+import SliderImage from './page/post_detail_admin/image/slider_image';
 import PostDetailAdmin from './page/post_detail_admin/post_detail_admin';
-import PostDetail from './page/posts_detail/post_detail'
-import SliderImage from './page/post_detail_admin/image/slider_image'
 import './App.scss';
 
 import React from "react";
@@ -36,7 +35,7 @@ function App() {
         <Route path="/posts/:id" component={PostDetailAdmin}>
         </Route>
         <Router path="*">
-          <NotFound/>
+          <NotFound />
         </Router>
       </Switch>
     </Router>

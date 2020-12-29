@@ -22,7 +22,9 @@ function AdvanceSearch() {
         <form className='advance-search__form' ref={register} onSubmit={handleSubmit(onSubmit)}>
           <div className='group-input'>
             <h2 className='group-input__title'>Địa chỉ</h2>
-            <input type='text' placeholder='Địa chỉ' ref={register} />
+            <input type='text' placeholder='Xã/Phường' ref={register} />
+            <input type='text' placeholder='Quận/Huyện' ref={register} />
+            <input type='text' placeholder='Tỉnh/Thành phố' ref={register} />
           </div>
           <div className='group-input'>
             <h2 className='group-input__title'>Cơ sở vật chất</h2>
@@ -70,18 +72,14 @@ function AdvanceSearch() {
               <option value="homestay">Homestay</option>
               <option value="house">Nhà nguyên căn</option>
             </select>
-            <select name='price' ref={register}>
-              <option value='volvo'>Giá cả</option>
-              <option value='saab'>3 000 000</option>
-              <option value='fiat'>2 500 000</option>
-              <option value='audi'>2 000 000</option>
-            </select>
-            <select name='area' ref={register}>
-              <option value='volvo'>Diện tích</option>
-              <option value='saab'>25m2</option>
-              <option value='fiat'>30m2</option>
-              <option value='audi'>35m2</option>
-            </select>
+            <p className="lable-connect">Giá cả từ</p>
+            <input type='number' name="price_min" placeholder='Giá cả' ref={register} />
+            <p className="lable-connect">Đến</p>
+            <input type='number' name="price_max" placeholder='Giá cả' ref={register} />
+            <p className="lable-connect">Diện tích từ</p>
+            <input type='number' name="area_min" placeholder='Diện tích' ref={register} />
+            <p className="lable-connect">Đến</p>
+            <input type='number' name="area_max" placeholder='Diện tích' ref={register} />
           </div>
           <button type='submit'>TÌM KIẾM</button>
         </form>
