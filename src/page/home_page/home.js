@@ -49,7 +49,8 @@ function Home() {
     <div className="home-page">
       { (LoggedIn) ? <MenuLogin /> : <Menu />}
       <div className="home-buffer"></div>
-      <BasicSearch onRedirect={handleRedirect} />
+      {/* <BasicSearch onRedirect={handleRedirect} /> */}
+      <BasicSearch/>
       <div className="home-page__container">
         <Features />
         <h1 className="web-header"><span className="blue">LATEST </span> POSTS </h1>
@@ -66,7 +67,7 @@ function Home() {
                   money={post.price}
                   area={post.area}
                   time={post.created_at}
-                  onPostClick={handleClickPost}
+                  onPostClick={() => handleClickPost(post.id)}
                 />
               )
             })

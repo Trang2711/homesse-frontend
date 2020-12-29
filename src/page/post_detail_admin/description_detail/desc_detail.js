@@ -1,6 +1,7 @@
 import './desc_detail.scss';
 
-function DescriptionDetail(){
+function DescriptionDetail(props){
+    const data = props.data;
     return(
         <div className="desc_detail__container">
             <h3 className="desc_detail__title">

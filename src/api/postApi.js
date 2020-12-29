@@ -6,7 +6,7 @@ const postApi = {
         return axiosClient.get(url);
     },
 
-    getById: (id) => {
+    getPost: (id) => {
         const url = `/post/${id}`;
         return axiosClient.get(url);
     },

@@ -5,8 +5,9 @@ import located from '../../../images/placeholder.png';
 import report from '../../../images/warning.png';
 import like from '../../../images/like.png';
 import {useState} from 'react'
-function Title(){                                                                                                                                                                                                                                                                                                                                                                                                                       
-
+function Title(props){  
+    const data = props.data;
+    console.log(data);
     const [numberlike, setnumberLike] = useState(0);
 
     const [numberFollow, setnumberFollow] = useState(0);
@@ -19,7 +20,7 @@ function Title(){
         
         <div className="title__container">
             <div className="title__header">
-                <h1 className="title__main">Phòng trọ gần Đại học Công Nghệ</h1>
+                <h1 className="title__main">{data.post.title}</h1>
                 <div className="title__money">
                     <h2 className="money__post"><span>$ </span>3.500.000<span> đ/tháng</span></h2>
                 </div>
