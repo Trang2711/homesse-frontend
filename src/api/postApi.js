@@ -24,6 +24,16 @@ const postApi = {
     searchPost: (data) => {
         const url = '/post/search/basic_search';
         return axiosClient.post(url, data);
+    },
+    
+    getPostUnapproval: (userId)=> {
+        const url = `/post/${userId}/unapproval_post_of_user`;
+        return axiosClient.get(url);
+    },
+
+    getPostApproval: (userId)=> {
+        const url = `/post/${userId}/approval_post_of_user`;
+        return axiosClient.get(url);
     }
 }
 

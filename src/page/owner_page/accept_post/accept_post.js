@@ -8,14 +8,13 @@ import Post from '../../../components/post/post_big/post_big';
 
 function AcceptPost () {
   const [posts, setPost] = useState([]);
-  const userId = useSelector(state => state.user.id);
-
+  const userId = localStorage.getItem("id");
+  console.log(userId);
   useEffect(() => {
     async function fetchPosts() {
         try {
-            const params = { user_id: userId, status_review: 1 };
-            const res = await postApi.getPosts(params);
-
+            const res = await postApi.getPostApproval(userId);
+            console.log(res);
             setPost(res);
         } catch (error) {
             console.log("Error when fetching userInfo: " + error);

@@ -13,14 +13,13 @@ function UnacceptPost() {
     const dialog = useRef(null);
     const [postActive, setPostActive] = useState();
 
-    const userId = useSelector(state => state.user.id);
+    const userId = localStorage.getItem("id");
 
     useEffect(() => {
         async function fetchPosts() {
             try {
-                const params = { user_id: userId, status_review: 0 };
-                const res = await postApi.getPosts(params);
-
+                const res = await postApi.getPostUnapproval(userId);
+                console.log(res);
                 setPost(res);
             } catch (error) {
                 console.log("Error when fetching userInfo: " + error);
@@ -28,6 +27,7 @@ function UnacceptPost() {
         }
         fetchPosts(userId);
     }, []);
+    
     const history = useHistory();
 
     function handleClickPost(postId) {
@@ -79,7 +79,7 @@ function UnacceptPost() {
             </div>
 
             <dialog className="edit-post scrollbar" ref={dialog}>
-                <EditPostForm postId={postActive} onFormClose={handleCloseForm}/>
+                <EditPostForm postId={postActive} onFormClose={handleCloseForm} />
             </dialog>
         </div>
     )
