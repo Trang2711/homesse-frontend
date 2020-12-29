@@ -27,7 +27,6 @@ function Home() {
     async function fetchPostList() {
       try {
         const responce = await postApi.getLatestPost();
-        console.log(responce[0]);
         setPostList(responce[0]);
       } catch (error) {
         console.log(error);
@@ -50,7 +49,6 @@ function Home() {
       { (LoggedIn) ? <MenuLogin /> : <Menu />}
       <div className="home-buffer"></div>
       <BasicSearch onRedirect={handleRedirect} />
-      <BasicSearch/>
       <div className="home-page__container">
         <Features />
         <h1 className="web-header"><span className="blue">LATEST </span> POSTS </h1>

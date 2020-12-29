@@ -32,7 +32,7 @@ function Title(props){
             </div>
             <div className="title__date">
                 <i class="far fa-clock title__date__icon"></i>
-                <p className="date__post">{data && data.post.created_at}</p>
+                <p className="date__post">{data && data.post_created_at} đến {data && data.post.time_display}</p>
                 <i class="fas fa-edit edit__datepost">
                     <span className="tooltip_editdate">Gia hạn bài viết</span>
                 </i>

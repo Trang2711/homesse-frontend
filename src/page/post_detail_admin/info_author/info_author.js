@@ -17,7 +17,7 @@ function InfoAuthor(props){
                 </div>
                 <div className="info__address">
                     <img src={address} className="info__author__address__icon" alt=""/>
-                    <p className="info__author__address">302 Cầu Giấy, Hà Nội</p>
+                    <p className="info__author__address">{data && data.address_user}</p>
                 </div>
                 <div className="info__contact">
                     <img src={contact} className="info__author__contact__icon" alt=""/>

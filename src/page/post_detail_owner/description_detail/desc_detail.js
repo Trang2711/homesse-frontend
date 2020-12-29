@@ -24,13 +24,13 @@ function DescriptionDetail(props){
                     </div>
                     <div className="desc_detail">
                         <label className="label_description">Số lượng phòng: </label>
-                        <p className="description">6</p>
+                        <p className="description">{data && data.post.rooms}</p>
                     </div>
                 </div>
                 <div className="description_detail2">
                     <div>
                         <label className="label_description">Địa điểm xung quanh: </label>
-                        <p className="description">{data && data.boarding.palce_around + ""}</p>
+                        <p className="description">{data && data.boarding.places_around + ""}</p>
                     </div>
                     <div className="desc_detail">
                         <label className="label_description">Giá: </label>

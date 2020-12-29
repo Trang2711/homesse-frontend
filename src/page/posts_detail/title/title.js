@@ -59,14 +59,14 @@ function Title(props){
             </div>
             <div className="title__date">
                 <i class="far fa-clock title__date__icon"></i>
-                <p className="date__post">{data && data.post.created_at}</p>
+                <p className="date__post">{data && data.post_created_at} đến {data && data.post.time_display}</p>
             </div>
             <div className="title__footer"> 
                 <div className="title__view">
-                    <p id="title__view"><span id="numberview">{data && data.seen_post[0].total_seens}</span> <span>Lượt xem</span></p>
+                    <p id="title__view"><span id="numberview">{data && data.seen_post}</span> <span>Lượt xem</span></p>
                 </div>
                 <div className="title__follow">
-                    <p id="title__follow"><span id="numberFollow">{numberFollow}</span> <span>Theo dõi</span></p>
+                    <p id="title__follow"><span id="numberFollow">{data && data.like_post}</span> <span>Theo dõi</span></p>
                 </div>
                 <div className="title__iconreport">
                     <i className="fas fa-exclamation-triangle" id="title__report__icon" onClick={clickReport}></i>

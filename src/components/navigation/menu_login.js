@@ -2,37 +2,37 @@ import './menu.scss';
 import logo from '../../images/logo_0.png';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import notificationApi from '../../api/notificationApi';
+import userApi from '../../api/userApi';
+// import notificationApi from '../../api/notificationApi';
 // import store from '../../store';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 function MenuLogin() {
-    const user = useSelector(state => state.user);
-    console.log(user);
+    
+    const userName = localStorage.getItem("lastName");
+    const role = localStorage.getItem("role");
+
     const [closeMenu, setCloseMenu] = useState(true);
-    const [notifications, setnotifications] = useState([]);
-    if(user){
-        console.log(user.lastName);
-    } else {
-        console.log("user null");
-    }
-
-    useEffect(() => {
-        async function fetchNotification(userId) {
-            const notifications = await notificationApi.getNotification({ user_id: userId });
-            console.log(notifications);
-            setnotifications(notifications);
-        }
-
-        fetchNotification()
-    }, [])
 
     function handleClick() {
         setCloseMenu(!closeMenu);
     }
 
     function logOut() {
-        localStorage.removeItem("token");
+        // const res = await userApi.signOut();
+        // if(res.message === "Successfully logged out"){
+            localStorage.removeItem("token");
+        // }
+    }
+
+    function setUrl() {
+        if(role === "owner") {
+            return'/owner';
+        } else if (role === "admin") {
+            return'/admin';
+        } else {
+            return'/personal';
+        }
     }
     return (
         <div className="navbar">
@@ -57,10 +57,10 @@ function MenuLogin() {
                     <li className="drop">
                         <i className="fal fa-user"></i>
                         <span>
-                            {user&&user.lastName}
+                            {userName}
                         </span>
                         <ul className="drop-down user-drop">
-                            <Link to={(user&&user.role === 'owner') ? '/owner' : '/personal'}><li>Trang cá nhân</li></Link>
+                            <Link to={setUrl()}><li>Trang cá nhân</li></Link>
                             <Link to="/" onClick={logOut}><li>Đăng xuất</li></Link>
                         </ul>
                     </li>

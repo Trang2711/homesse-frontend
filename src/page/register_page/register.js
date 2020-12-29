@@ -296,7 +296,7 @@ class RegisterPage extends Component {
                             <br />
                             <p className="register__error" id="register__phone_numberError"></p>
                         </div>
-                        <div class="form-group">
+                        {/* <div class="form-group">
 
                             <input type="text" id="location-text-box" name="txtaddress" class="form-control" value="" />
 
@@ -306,7 +306,7 @@ class RegisterPage extends Component {
                             width: "auto",
                             height: "400px",
                             display: "none"
-                        }}></div>
+                        }}></div> */}
                         <div className="group-input">
                             <label>Address<sup>*</sup>:</label>
                             <input
