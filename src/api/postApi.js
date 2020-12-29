@@ -19,8 +19,12 @@ const postApi = {
     createPost: (data) => {
         const url = '/post/create_post';
         return axiosClient.post(url, data);
-    }
+    },
     
+    searchPost: (data) => {
+        const url = '/post/search/basic_search';
+        return axiosClient.post(url, data);
+    }
 }
 
 export default postApi;
