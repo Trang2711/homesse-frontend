@@ -64,7 +64,7 @@ function MenuLogin() {
                         <i className="fal fa-bell"></i>
                         <ul className="drop-down notify-drop">
                             {
-                                notifications.map(notification => (
+                                notifications && notifications.map(notification => (
                                     <Notification 
                                         userId={notification.userId} 
                                         postId={notification.postId} 
