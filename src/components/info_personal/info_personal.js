@@ -1,13 +1,20 @@
 import './info_personal.scss';
 import EditInfoForm from '../../components/edit_info_form/edit_info_form';
 import { useRef } from 'react';
+import userApi from '../../api/userApi';
 
 
 function InfoPersonal(props) {
 
+    // const userId = useSelector(state => state.userId);
+    // useEffect(() => {
+    //     async fetchUserInfo() {
+    //         const res = await 
+    //     }
+    // }, [input])
 
     console.log(props.userInfo);
-    var { avatar, email, phone_number, address, cmnd, firstName, lastName } = props.userInfo;
+    var { avatar, email, phone_number, address, cmnd, firstname, lastname } = props.userInfo;
     
     const dialog = useRef(null);
 
@@ -24,7 +31,7 @@ function InfoPersonal(props) {
         <div className="info-personal__container">
             <div className="avatar__container">
                 <div className="avatar__image"></div>
-                <div className="avatar__name">{firstName + " " + lastName}<i className="fas fa-edit" onClick={handleOpenForm}></i></div>
+                <div className="avatar__name">{firstname + " " + lastname}<i className="fas fa-edit" onClick={handleOpenForm}></i></div>
             </div>
             <div className="info__container">
                 <div className="info-col">

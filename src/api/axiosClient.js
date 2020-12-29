@@ -11,9 +11,11 @@ axiosClient.interceptors.request.use(async (config) => {
     /**
      * handle whatever you want
      */
-    if(store.user) {
+    const user = store.getState().user;
+    console.log(user);
+    if(user) {
         const token = localStorage.getItem('token');
-        config.headers.Authorization = localStorage.getItem(token);
+        config.headers.Authorization = token;
     }
     return config;
 })

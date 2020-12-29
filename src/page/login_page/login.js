@@ -51,8 +51,9 @@ function Login() {
             console.log(res);
 
             if (res.message === "Đăng nhập thành công") {
-                localStorage.setItem("token", res.token_type + res.access_token);
+                localStorage.setItem("token", res.token_type + " " + res.access_token);
                 let newUser = initUser(res);
+                console.log(newUser);
                 dispatch(newUser);
                 console.log(store.state);
                 setLoggedIn(true);

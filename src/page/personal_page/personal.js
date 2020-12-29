@@ -18,24 +18,24 @@ import EditInfoModal from '../../components/modal/edit_info';
 
 function PersonalPage() {
 
-    const userName = useSelector(state => state.user.name);
-    const userId = useSelector(state => state.user.id)
-    console.log(userId, userName);
+    // const userName = useSelector(state => state.user.lastName);
+    // const userId = useSelector(state => state.user.id)
+    // console.log(userId, userName);
 
     const [info, setInfo] = useState([]);
 
-    useEffect(() => {
-        async function fetchInfo(id) {
-            try {
-                const res = await userApi.getUser(id);
-                console.log(res);
-                setInfo(res);
-            } catch (error) {
-                console.log("Error when fetching userInfo: " + error);
-            }
-        }
-        fetchInfo(userId);
-    }, []);
+    // useEffect(() => {
+    //     async function fetchInfo(id) {
+    //         try {
+    //             const res = await userApi.getUser(id);
+    //             console.log(res);
+    //             setInfo(res);
+    //         } catch (error) {
+    //             console.log("Error when fetching userInfo: " + error);
+    //         }
+    //     }
+    //     fetchInfo(userId);
+    // }, []);
 
     return (
         <Router>
