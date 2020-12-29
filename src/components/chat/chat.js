@@ -15,7 +15,8 @@ function Chat() {
   }
   function handleSubmitChat(e) {
     e.preventDefault();
-    console.log(valueInput);
+    // console.log(valueInput);
+    
   }
   return (
     <div className="chat__container">

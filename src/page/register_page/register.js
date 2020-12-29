@@ -298,26 +298,26 @@ class RegisterPage extends Component {
                         </div>
                         <div class="form-group">
 
-                                <input type="text" id="location-text-box" name="txtaddress" class="form-control" value="" />
+                            <input type="text" id="location-text-box" name="txtaddress" class="form-control" value="" />
 
-                            </div>
+                        </div>
 
-                            <div id="map-canvas" style={{
-                                width: "auto",
-                                height: "400px",
-                                display: "none"
-                            }}></div>
+                        <div id="map-canvas" style={{
+                            width: "auto",
+                            height: "400px",
+                            display: "none"
+                        }}></div>
                         <div className="group-input">
                             <label>Address<sup>*</sup>:</label>
-                            <input 
-                                type="text" 
-                                className="required" 
+                            <input
+                                type="text"
+                                className="required"
                                 name="address"
-                                onChange={ this.onHandleChange}
+                                onChange={this.onHandleChange}
                                 value={this.state.address}
                             />
 
-                            
+
                             {
                                 this.state.warningAddress ?
                                     <img src={warn} className="register__warning" id="warning-address" alt="" />
