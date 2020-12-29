@@ -59,7 +59,7 @@ function OwnerPage() {
                                 <InfoPersonal userInfo={info} />
                             </Route>
                             <Route path="/owner/add-post">
-                                <CreatePost onSubmit={handleSubmitCreatePost} />
+                                <CreatePost onSubmitToServer={handleSubmitCreatePost} />
                             </Route>
                             <Route path="/owner/accept-post">
                                 <AcceptPost/>

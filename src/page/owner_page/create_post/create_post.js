@@ -4,7 +4,6 @@ import React, { useState, useRef } from "react";
 import { useSelector } from 'react-redux';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
-import postApi from '../../../api/postApi';
 
 const CreatePostSchema = yup.object().shape({
     title: yup.string().max(65).required(),
@@ -18,7 +17,7 @@ const CreatePostSchema = yup.object().shape({
 
 function CreatePost(props) {
 
-    const {handleSubmitCreatePost} = props;
+    const {onSubmitToServer} = props;
 
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(CreatePostSchema)
@@ -57,7 +56,7 @@ function CreatePost(props) {
         let furniture = "";
         furniture = addFurniture(data.air_conditioner, furniture, "điều hòa");
         furniture = addFurniture(data.balcony, furniture, "ban công");
-        furniture = addFurniture(data.bathroom, furniture, "phong tắm");
+        furniture = addFurniture(data.bathroom, furniture, "phòng tắm");
         furniture = addFurniture(data.bed, furniture, "giường");
         furniture = addFurniture(data.fridge, furniture, "tủ lạnh");
         furniture = addFurniture(data.kitchen, furniture, "bếp");
@@ -80,7 +79,7 @@ function CreatePost(props) {
             type: data.type
         };
         console.log(dataFomat);
-        handleSubmitCreatePost(dataFomat);
+        onSubmitToServer(dataFomat);
     }
 
     function addFurniture (params, oldString, addString) {
@@ -191,7 +190,7 @@ function CreatePost(props) {
                 </div>
                 <div className="form-group">
                     <label>Địa điểm xung quanh</label>
-                    <textarea name="place-around" id="" cols="30" rows="3"
+                    <textarea name="place_around" id="" cols="30" rows="3"
                         placeholder="Địa điểm công cộng gần đó" ref={register}></textarea>
                 </div>
                 <div className="form-group">
