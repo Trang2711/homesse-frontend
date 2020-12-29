@@ -18,6 +18,8 @@ const CreatePostSchema = yup.object().shape({
 
 function CreatePost(props) {
 
+    const {handleSubmitCreatePost} = props;
+
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(CreatePostSchema)
     });
@@ -78,7 +80,7 @@ function CreatePost(props) {
             type: data.type
         };
         console.log(dataFomat);
-        postApi.createPost(dataFomat);
+        handleSubmitCreatePost(dataFomat);
     }
 
     function addFurniture (params, oldString, addString) {

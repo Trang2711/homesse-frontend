@@ -8,20 +8,14 @@ const axiosClient = axios.create({
 });
 
 axiosClient.interceptors.request.use(async (config) => {
-    /**
-     * handle whatever you want
-     */
-    const user = store.getState().user;
-    console.log(user);
-    if(user) {
-        const token = localStorage.getItem('token');
-        config.headers.Authorization = token;
-    }
+    console.log(store.getState().user);
+    const token = localStorage.getItem('token');
+    config.headers.Authorization = token ? token : "";
     return config;
 })
 
 axiosClient.interceptors.response.use((response) => {
-    if(response && response.data) {
+    if (response && response.data) {
         return response.data;
     }
 

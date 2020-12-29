@@ -11,11 +11,20 @@ const userApi = {
         return axiosClient.post(url, data);
     },
 
+    signOut: () => {
+        const url = 'auth/logout';
+        return axiosClient.get(url);
+    },
+
     createAccount: (dataForm) => {
         const url = 'auth/signup';
         return axiosClient.post(url, dataForm);
     },
     
+    authorization: () => {
+        const url = 'user/';
+        return axiosClient.get(url);
+    }
 }
 
 export default userApi;

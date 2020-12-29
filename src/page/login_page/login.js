@@ -52,10 +52,10 @@ function Login() {
 
             if (res.message === "Đăng nhập thành công") {
                 localStorage.setItem("token", res.token_type + " " + res.access_token);
-                let newUser = initUser(res);
-                console.log(newUser);
-                dispatch(newUser);
-                console.log(store.state);
+                localStorage.setItem("id", res.id);
+                localStorage.setItem("role", res.role);
+                localStorage.setItem("lastName", res.lastName);
+
                 setLoggedIn(true);
 
                 if (LoggedIn) return history.push("/");
