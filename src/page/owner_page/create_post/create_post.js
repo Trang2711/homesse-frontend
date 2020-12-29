@@ -4,7 +4,6 @@ import React, { useState, useRef } from "react";
 import { useSelector } from 'react-redux';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
-import postApi from '../../../api/postApi';
 
 const CreatePostSchema = yup.object().shape({
     title: yup.string().max(65).required(),
@@ -57,12 +56,12 @@ function CreatePost(props) {
         let furniture = "";
         furniture = addFurniture(data.air_conditioner, furniture, "điều hòa");
         furniture = addFurniture(data.balcony, furniture, "ban công");
-        furniture = addFurniture(data.bathroom, furniture, "phong tắm");
-        furniture = addFurniture(data.bed, furniture, "giường");
+        furniture = addFurniture(data.bathroom, furniture, "phòng tắm riêng");
+        furniture = addFurniture(data.bed, furniture, "giường ngủ");
         furniture = addFurniture(data.fridge, furniture, "tủ lạnh");
         furniture = addFurniture(data.kitchen, furniture, "bếp");
-        furniture = addFurniture(data.parking, furniture, "bãi đậu xe");
-        furniture = addFurniture(data.washing_machine, furniture, "tủ lạnh");
+        furniture = addFurniture(data.parking, furniture, "chỗ để xe");
+        furniture = addFurniture(data.washing_machine, furniture, "máy giặt");
         furniture = addFurniture(data.wifi, furniture, "internet");
         furniture = furniture.substring(0, furniture.length - 1);
         let dataFomat = {
