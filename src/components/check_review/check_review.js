@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function CheckReview(props) {
     const {initState, onClickReview} = props;
-    const tmp = (initState === "0") ? false : true;
+    const tmp = (initState === 0) ? false : true;
     const [checked, setChecked] = useState(tmp);
 
     function onChangeStatus() {

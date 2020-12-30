@@ -20,8 +20,8 @@ function SearchPage() {
         // console.log(data);
         async function fetchPosts(data) {
             const res = await postApi.searchPost(data);
-            console.log(res);
-            setPosts(res);
+            console.log(res[0]);
+            setPosts(res[0]);
         }
         fetchPosts(data);
     }

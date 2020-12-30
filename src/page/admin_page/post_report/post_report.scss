@@ -1,0 +1,37 @@
+.post-report__inner {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between
+}
+
+.box-report{
+    min-width: 160px;
+    max-width: 180px;
+    width: 32%;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.box-report__green {
+    background-color: #26A69A;
+    border-color: #26A69A;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.box-report__pink {
+    background-color: #EC407A;
+    border-color: #EC407A;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.box-report__blue {
+    background-color: #29B6F6;
+    border-color: #29B6F6;
+    color: #fff;
+}
+.box-report_header {
+    font-weight: bold;
+    margin-bottom: 5px;
+}

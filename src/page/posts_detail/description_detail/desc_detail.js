@@ -2,6 +2,28 @@ import './desc_detail.scss';
 
 function DescriptionDetail(props){
     const data = props.data;
+
+    function setValueInput(type){
+        console.log("this here");
+        if(!data) return;
+        if(type === "electricity_price"){
+            if(data.boarding.electricity_water === 2){
+                return "gia dan";
+            } else {
+                return data.boarding.electricity_price;
+            }
+        }
+        if(type === "water_price"){
+            if(data.boarding.electricity_water === 2){
+                return "gia dan";
+            } else {
+                return data.boarding.water_price;
+            }
+        }
+        return "";
+    }
+    var electricity_price = setValueInput("electricity_price");
+    var water_price = setValueInput("water_price");
     return(
         <div className="desc_detail__container">
             <h3 className="desc_detail__title">

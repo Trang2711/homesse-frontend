@@ -87,10 +87,10 @@ function AdvanceSearch(props) {
             <h2 className='group-input__title'>Khác</h2>
             <select name='type_room' ref={register}>
               <option className="abc" value="">Loại phòng</option>
-              <option value="apartment">Chung cư</option>
-              <option value="boarding-room">Phòng trọ</option>
+              <option value="chung cư">Chung cư</option>
+              <option value="phòng trọ">Phòng trọ</option>
               <option value="homestay">Homestay</option>
-              <option value="house">Nhà nguyên căn</option>
+              <option value="nhà nguyên căn">Nhà nguyên căn</option>
             </select>
             <p className="lable-connect">Giá cả từ</p>
             <input type='number' name="price_min" placeholder='Giá cả' ref={register} />

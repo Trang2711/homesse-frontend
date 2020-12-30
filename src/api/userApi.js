@@ -24,7 +24,23 @@ const userApi = {
     authorization: () => {
         const url = 'user/';
         return axiosClient.get(url);
+    },
+
+    getAllUser: () => {
+        const url = 'admin/users/list';
+        return axiosClient.get(url);
+    },
+
+    setUnapprovalUser: (userId) => {
+        const url = `/admin/users/${userId}/unapproval`;
+        return axiosClient.get(url);
+    },
+
+    setApprovalUser: (userId) => {
+        const url = `/admin/users/${userId}/approval`;
+        return axiosClient.get(url);
     }
+
 }
 
 export default userApi;
