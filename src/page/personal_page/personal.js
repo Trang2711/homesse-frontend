@@ -1,8 +1,7 @@
 import './personal.scss';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useRouteMatch } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import userApi from '../../api/userApi';
 
 import MenuLogin from '../../components/navigation/menu_login';
 import Footer from '../../components/footer/footer';
@@ -21,44 +20,34 @@ function PersonalPage() {
     // const userName = useSelector(state => state.user.lastName);
     // const userId = useSelector(state => state.user.id)
     // console.log(userId, userName);
+    
 
-    const [info, setInfo] = useState([]);
+    
 
-    // useEffect(() => {
-    //     async function fetchInfo(id) {
-    //         try {
-    //             const res = await userApi.getUser(id);
-    //             console.log(res);
-    //             setInfo(res);
-    //         } catch (error) {
-    //             console.log("Error when fetching userInfo: " + error);
-    //         }
-    //     }
-    //     fetchInfo(userId);
-    // }, []);
-
+    let { path, url} = useRouteMatch();
+    console.log(path, url);
     return (
         <Router>
             <div className="personal-page">
-                <MenuLogin userName="Trang Trịnh" />
+                <MenuLogin/>
                 <div className="buffer"></div>
                 <div className="personal-page__container">
-                    <LeftNav />
+                    <LeftNav url={url}/>
                     <div className="personal-page__content">
                         <Switch>
-                            <Route path="/personal/info">
-                                <InfoPersonal userInfo={info} />
+                            <Route exact path={path}>
+                                <InfoPersonal/>
                             </Route>
-                            <Route path="/personal/saved-post">
+                            <Route path={`${path}/saved-post`}>
                                 <SavedPost />
                             </Route>
-                            <Route path="/personal/history/liked-post">
+                            <Route path={`${path}/history/liked-post`}>
                                 <LikedPost />
                             </Route>
-                            <Route path="/personal/history/post-commented">
+                            <Route path={`${path}/history/post-commented`}>
                                 <CommentedPost />
                             </Route>
-                            <Route path="/personal/history/post-reported">
+                            <Route path={`${path}/history/post-reported`}>
                                 <ReportedPost />
                             </Route>
                         </Switch>

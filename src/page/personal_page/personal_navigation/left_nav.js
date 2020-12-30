@@ -1,6 +1,6 @@
-import { Component } from 'react';
 import { Link } from "react-router-dom";
 import './left_nav.scss';
+import {Component} from 'react';
 
 class LeftNav extends Component {
     render() {
@@ -26,5 +26,4 @@ class LeftNav extends Component {
         )
     }
 }
-
 export default LeftNav;

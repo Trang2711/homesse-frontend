@@ -52,9 +52,9 @@ function AdvanceSearch(props) {
         <form className='advance-search__form' ref={register} onSubmit={handleSubmit(onSubmit)}>
           <div className='group-input'>
             <h2 className='group-input__title'>Địa chỉ</h2>
-            <input type='text' name="wards" placeholder='Xã/Phường' ref={register} />
-            <input type='text' name="district" placeholder='Quận/Huyện' ref={register} />
             <input type='text' name="provinces" placeholder='Tỉnh/Thành phố' ref={register} />
+            <input type='text' name="district" placeholder='Quận/Huyện' ref={register} />
+            <input type='text' name="wards" placeholder='Xã/Phường' ref={register} />
           </div>
           <div className='group-input'>
             <h2 className='group-input__title'>Cơ sở vật chất</h2>

@@ -17,7 +17,7 @@ const CreatePostSchema = yup.object().shape({
 
 function CreatePost(props) {
 
-    const {onSubmitToServer} = props;
+    const { onSubmitToServer } = props;
 
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(CreatePostSchema)
@@ -82,8 +82,8 @@ function CreatePost(props) {
         onSubmitToServer(dataFomat);
     }
 
-    function addFurniture (params, oldString, addString) {
-        if(params) return oldString + addString + ",";
+    function addFurniture(params, oldString, addString) {
+        if (params) return oldString + addString + ",";
         return oldString;
     }
     return (
@@ -113,7 +113,24 @@ function CreatePost(props) {
 
                 <div className="form-group">
                     <label>Địa chỉ<sup>*</sup></label>
-                    <input type="text" name="address" id="" placeholder="Địa chỉ chi tiết" ref={register} />
+                    {/* <input type="text" name="address" id="" placeholder="Địa chỉ chi tiết" ref={register} /> */}
+                    <div>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                id="location-text-box"
+                                name="address"
+                                className="form-control"
+                                ref={register}
+                            />
+                            {/* <p><i className="far fa-bell" /> Nếu địa chỉ hiển thị bên bản đồ không đúng bạn có thể
+                                            điều chỉnh bằng cách kéo điểm màu xanh trên bản đồ tới vị trí chính xác.</p> */}
+                            <input type="hidden" id="address" name="address" defaultValue className="form-control" />
+                            <input type="hidden" id="txtlat" name="txtlat" className="form-control"/>
+                            <input type="hidden" id="txtlng" name="txtlng" className="form-control"/>
+                        </div>
+                        <div id="map-canvas" style={{ width: 'auto', height: "0px", opacity: 0 }} />
+                    </div>
                 </div>
                 <div className="form-row">
                     <div className="form-group">
@@ -208,7 +225,7 @@ function CreatePost(props) {
                     </div>
                     <div className="form-group">
                         <label>Số tiền phải nộp<sup></sup></label>
-                        <input type="text" id="" value={numerDate * postPrice} ref={register}/>
+                        <input type="text" id="" value={numerDate * postPrice} ref={register} />
                     </div>
                 </div>
                 <div className="form-group">

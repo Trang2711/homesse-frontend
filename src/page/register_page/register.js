@@ -3,7 +3,6 @@ import './register.scss';
 import warn from '../../images/exclamation-mark.png'
 import { Redirect } from 'react-router-dom';
 import userApi from '../../api/userApi';
-import ScriptTag from 'react-script-tag';
 // import initialize from '../../api/apigoogle';
 
 class RegisterPage extends Component {
@@ -15,6 +14,8 @@ class RegisterPage extends Component {
             email: '',
             phone_number: '',
             address: '',
+            txtlat: '',
+            txtlng: '',
             password: '',
             repassword: '',
             cmnd: '',
@@ -222,6 +223,9 @@ class RegisterPage extends Component {
             return true;
         }
     }
+    // handleOnChange(e){
+    //     console.log(e.target.value);
+    // }
     render() {
         if (this.state.validationOk) return <Redirect to="/login" />
         return (
@@ -296,20 +300,11 @@ class RegisterPage extends Component {
                             <br />
                             <p className="register__error" id="register__phone_numberError"></p>
                         </div>
-                        {/* <div class="form-group">
 
-                            <input type="text" id="location-text-box" name="txtaddress" class="form-control" value="" />
 
-                        </div>
-
-                        <div id="map-canvas" style={{
-                            width: "auto",
-                            height: "400px",
-                            display: "none"
-                        }}></div> */}
-                        <div className="group-input">
+                        <div className="group-input address">
                             <label>Address<sup>*</sup>:</label>
-                            <input
+                            {/* <input
                                 type="text"
                                 className="required"
                                 name="address"
@@ -318,6 +313,31 @@ class RegisterPage extends Component {
                             />
 
 
+                            {
+                                this.state.warningAddress ?
+                                    <img src={warn} className="register__warning" id="warning-address" alt="" />
+                                    : null
+                            } */}
+                            <div>
+                                <div className="form-group">
+                                    <input
+                                        type="text"
+                                        id="location-text-box"
+                                        name="address"
+                                        className="form-control required"
+                                        onChange={this.onHandleChange}
+                                        value={this.state.address}
+                                    />
+                                    {/* <p><i className="far fa-bell" /> Nếu địa chỉ hiển thị bên bản đồ không đúng bạn có thể
+                                            điều chỉnh bằng cách kéo điểm màu xanh trên bản đồ tới vị trí chính xác.</p> */}
+                                    <input type="hidden" id="address" name="address" defaultValue className="form-control" />
+                                    <input type="hidden" id="txtlat" name="txtlat" className="form-control" onChange={this.onHandleChange}
+                                        value={this.state.txtlat} />
+                                    <input type="hidden" id="txtlng" name="txtlng" className="form-control" onChange={this.onHandleChange}
+                                        value={this.state.txtlng} />
+                                </div>
+                                <div id="map-canvas" style={{ width: 'auto', height: "0px", opacity: 0 }} />
+                            </div>
                             {
                                 this.state.warningAddress ?
                                     <img src={warn} className="register__warning" id="warning-address" alt="" />
@@ -404,6 +424,8 @@ class RegisterPage extends Component {
                             <button type="submit" className="register__button">REGISTER</button>
                         </div>
                     </form>
+
+
                 </div>
             </div>
         )

@@ -38,11 +38,11 @@ function DescriptionDetail(props){
                     </div>
                     <div className="desc_detail">
                         <label className="label_description">Giá điện: </label>
-                        <p className="description">{data && (data.boarding.electricity_water === 2) ? "Giá dân" : (data && data.boarding.electricity_price) + "đ/số"}</p>
+                        <p className="description">{data && (data.boarding.electricity_water === 2) ? "Giá dân" : ""}</p>
                     </div>
                     <div className="desc_detail">
                         <label className="label_description">Giá nước: </label>
-                        <p className="description">{data && (data.boarding.electricity_water === 2) ? "Giá dân" : (data && data.boarding.water_price) + "đ/m3"}</p>
+                        <p className="description">{data && (data.boarding.electricity_water === 2) ? "Giá dân" : ""}</p>
                     </div>
                 </div>
             </div>
