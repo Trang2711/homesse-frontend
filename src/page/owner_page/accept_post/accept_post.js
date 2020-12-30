@@ -9,7 +9,7 @@ import Post from '../../../components/post/post_big/post_big';
 function AcceptPost () {
   const [posts, setPost] = useState([]);
   const userId = localStorage.getItem("id");
-  console.log(userId);
+  
   useEffect(() => {
     async function fetchPosts() {
         try {
