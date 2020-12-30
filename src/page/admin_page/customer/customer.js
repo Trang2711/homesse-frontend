@@ -9,7 +9,7 @@ function Customer() {
 
     useEffect(() => {
         async function fetchCustomer() {
-            const customers = await userApi.getUser();
+            const customers = await userApi.getAllUser();
             console.log(customers);
             setCustomers(customers);
         }
@@ -17,11 +17,13 @@ function Customer() {
         fetchCustomer();
     }, [])
 
-    function handleClickReview(status_review) {
+    function handleClickReview(userId, status_review) {
         console.log(status_review);
-        /**
-         * send request to change status review
-         */
+        if(status_review === 1){
+            userApi.setUnapprovalUser(userId);
+        } else {
+            userApi.setApprovalUser(userId);
+        }
     }
 
     return (
@@ -47,7 +49,7 @@ function Customer() {
                                     </td>
                                     <td>{customer.time_create}</td>
                                     <td>
-                                        <CheckReview initState={customer.status_review} onClickReview={handleClickReview} />
+                                        <CheckReview initState={customer.status_review} onClickReview={()=>handleClickReview(customer.id, customer.status_review)} />
                                     </td>
                                 </tr>
                             ))

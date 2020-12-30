@@ -30,11 +30,11 @@ function MenuLogin() {
         setCloseMenu(!closeMenu);
     }
 
-    async function logOut() {
-        const res = await userApi.signOut();
-        if(res.message === "Successfully logged out"){
+    function logOut() {
+        // const res = await userApi.signOut();
+        // if(res.message === "Successfully logged out"){
             localStorage.removeItem("token");
-        }
+        // }
     }
 
     function setUrl() {

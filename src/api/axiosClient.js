@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import store from '../store';
 
 const axiosClient = axios.create({
-    baseURL: 'http://127.0.0.1:8000/',
+    baseURL: 'http://127.0.0.1:1220/',
     paramsSerializer: params => queryString.stringify(params),
 });
 

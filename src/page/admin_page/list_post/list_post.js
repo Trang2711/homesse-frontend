@@ -13,8 +13,9 @@ function ListPost() {
 
     useEffect(() => {
         async function fetchPost() {
-            const posts = await postApi.getPosts();
-            setPosts(posts);
+            const res = await postApi.getPosts();
+            console.log(res);
+            setPosts(res);
         }
 
         fetchPost();
@@ -25,11 +26,13 @@ function ListPost() {
         history.push(`/posts/${postId}`);
     }
 
-    function handleClickReview(status_review) {
+    function handleClickReview(postId, status_review) {
         console.log(status_review);
-        /**
-         * send request to change status review
-         */
+        if(status_review === 1){
+            postApi.setUnapprovalPost(postId);
+        } else {
+            postApi.setApprovalPost(postId);
+        }
     }
     
         return (
@@ -50,7 +53,7 @@ function ListPost() {
                         </thead>
                         <tbody>
                             {
-                                posts.map((post => (
+                                posts&&posts.map((post => (
                                 <tr key={post.id}>
                                     <td><input type="checkbox" name="delete" /></td>
                                     <td>
@@ -65,7 +68,7 @@ function ListPost() {
                                     <td>{post.time_display} <br /> 07:54</td>
                                     <td>0</td>
                                     <td>
-                                        <CheckReview initState={post.status_review} onClickReview={handleClickReview}/>
+                                        <CheckReview initState={post.status_review} onClickReview={()=>handleClickReview(post.id, post.status_review)}/>
                                     </td>
                                 </tr>)))
                             }

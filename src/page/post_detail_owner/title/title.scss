@@ -56,10 +56,13 @@
     flex: 2;
 }
 .title__follow{
-    flex: 6;
+    flex: 5;
+}
+.title__status{
+    flex: 2;
 }
 .title__updatestate{
-    flex: 2;
+    flex: 3;
     height: 40px;
     border: none;
     border-radius: 20px;
@@ -69,7 +72,8 @@
     font-weight: bold;
     margin-top: -10px;
 }
-#title__view, #title__follow{
+#title__view, #title__follow, #title__status{
+    width: 130px;
     margin: 0;
     font-weight: bold;
     color: gray;
