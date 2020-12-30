@@ -12,7 +12,7 @@ const postApi = {
     },
 
     getPosts: (params) => {
-        const url = '/post';
+        const url = '/admin/post/list';
         return axiosClient.get(url, {params});
     },
     
@@ -34,7 +34,23 @@ const postApi = {
     getPostApproval: (userId)=> {
         const url = `/post/${userId}/approval_post_of_user`;
         return axiosClient.get(url);
+    },
+
+    setApprovalPost: (postId) => {
+        const url = `/admin/post/approve/${postId}`;
+        return axiosClient.get(url);
+    },
+
+    setUnapprovalPost: (postId) => {
+        const url = `/admin/post/unapprove/${postId}`;
+        return axiosClient.get(url);
+    },
+
+    getListDay: () => {
+        const url = `/admin/post/list_day`;
+        return axiosClient.get(url);
     }
+
 }
 
 export default postApi;

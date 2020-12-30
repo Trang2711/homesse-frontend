@@ -24,7 +24,7 @@ class Post extends Component {
                     <div className="post__description">
                         <div className="post__description--item">
                             <i className="post__description--icon far fa-dollar-sign" ></i>
-                            <span>{money}</span>
+                            <span>{money}đ</span>
                         </div>
                         <div className="post__description--item">
                             <img className="post__description--icon" src={area_icon} alt=""></img>
